@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+  <!--RIMkea-->
+  <Operation Class="JPTools.PatchOperationFindModById">
+    <mods>
+      <li>spoonshortage.rimkea</li>
+      <li>zal.rimkea</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <success>Always</success>
+      <operations>
+        <!--Extra Defs-->
+        <li Class="PatchOperationAdd">
+          <xpath>Defs</xpath>
+          <value>
+            <ThingDef ParentName="BlanketBase">
+              <defName>SNOREGGSingleBlanket</defName>
+              <label>RIMkea single blanket</label>
+              <description>Keeps you warm</description>
+              <graphicData>
+                <texPath>Things/Building/RIMkea/SNOREGGSingleBlanket</texPath>
+                <graphicClass>Graphic_Multi</graphicClass>
+                <shaderType>CutoutComplex</shaderType>
+                <drawSize>(3,4)</drawSize>
+                <damageData>
+                  <rect>(0,0.05,1,1.95)</rect>
+                </damageData>
+              </graphicData>
+              <size>(1,2)</size>
+            </ThingDef>
+            <ThingDef ParentName="BlanketBase">
+              <defName>SNOREGGDoubleBlanket</defName>
+              <label>RIMkea double blanket</label>
+              <graphicData>
+                <texPath>Things/Building/RIMkea/SNOREGGDoubleBlanket</texPath>
+                <graphicClass>Graphic_Multi</graphicClass>
+                <shaderType>CutoutComplex</shaderType>
+                <drawSize>(4.05,4.05)</drawSize>
+                <damageData>
+                  <rect>(0,0.05,1,1.95)</rect>
+                </damageData>
+              </graphicData>
+              <size>(2,2)</size>
+            </ThingDef>
+            <ThingDef ParentName="BlanketBase">
+              <defName>KRUDNEPPSingleBlanket</defName>
+              <label>RIMkea single blanket</label>
+              <description>Keeps you warm</description>
+              <graphicData>
+                <texPath>Things/Building/RIMkea/KRUDNEPPSingleBlanket</texPath>
+                <graphicClass>Graphic_Multi</graphicClass>
+                <shaderType>CutoutComplex</shaderType>
+                <drawSize>(3,4)</drawSize>
+                <damageData>
+                  <rect>(0,0.05,1,1.95)</rect>
+                </damageData>
+              </graphicData>
+              <size>(1,2)</size>
+            </ThingDef>
+            <ThingDef ParentName="BlanketBase">
+              <defName>SLABNEPPDoubleBlanket</defName>
+              <label>RIMkea double blanket</label>
+              <graphicData>
+                <texPath>Things/Building/RIMkea/SLABNEPPDoubleBlanket</texPath>
+                <graphicClass>Graphic_Multi</graphicClass>
+                <shaderType>CutoutComplex</shaderType>
+                <drawSize>(4.05,4.05)</drawSize>
+                <damageData>
+                  <rect>(0,0.05,1,1.95)</rect>
+                </damageData>
+              </graphicData>
+              <size>(2,2)</size>
+            </ThingDef>
+          </value>
+        </li>
+        <!--Function Extension-->
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName="SNOREGGSingle" or defName="SNOREGGDouble" or defName="KRUDNEPPSingle" or defName="SLABNEPPDouble"]</xpath>
+          <value>
+            <inspectorTabs>
+              <li>SoftWarmBeds.ITab_Bedding</li>
+            </inspectorTabs>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName="SNOREGGSingle" or defName="SNOREGGDouble" or defName="KRUDNEPPSingle" or defName="SLABNEPPDouble"]/building</xpath>
+          <value>
+            <fixedStorageSettings>
+              <filter>
+                <categories>
+                  <li>Textiles</li>
+                </categories>
+              </filter>
+            </fixedStorageSettings>
+            <defaultStorageSettings>
+              <filter>
+                <categories>
+                  <li>Textiles</li>
+                </categories>
+              </filter>
+            </defaultStorageSettings>
+          </value>
+        </li>
+        <!--Peserving Menu Icon-->
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName = "SNOREGGSingle" or defName = "SNOREGGDouble" or defName = "KRUDNEPPSingle" or defName = "SLABNEPPDouble"]</xpath>
+          <value>
+            <uiIconPath />
+            <uiIconScale>1.66</uiIconScale>
+          </value>
+        </li>
+        <li Class="JPTools.PatchOperationCopy">
+          <xpath>/Defs/ThingDef[defName = "SNOREGGSingle"]/graphicData/texPath</xpath>
+          <toXpath>/Defs/ThingDef[defName = "SNOREGGSingle"]/uiIconPath</toXpath>
+          <append>_south</append>
+        </li>
+        <li Class="JPTools.PatchOperationCopy">
+          <xpath>/Defs/ThingDef[defName = "SNOREGGDouble"]/graphicData/texPath</xpath>
+          <toXpath>/Defs/ThingDef[defName = "SNOREGGDouble"]/uiIconPath</toXpath>
+          <append>_south</append>
+        </li>
+        <li Class="JPTools.PatchOperationCopy">
+          <xpath>/Defs/ThingDef[defName = "KRUDNEPPSingle"]/graphicData/texPath</xpath>
+          <toXpath>/Defs/ThingDef[defName = "KRUDNEPPSingle"]/uiIconPath</toXpath>
+          <append>_south</append>
+        </li>
+        <li Class="JPTools.PatchOperationCopy">
+          <xpath>/Defs/ThingDef[defName = "SLABNEPPDouble"]/graphicData/texPath</xpath>
+          <toXpath>/Defs/ThingDef[defName = "SLABNEPPDouble"]/uiIconPath</toXpath>
+          <append>_south</append>
+        </li>
+        <!--Graphic Modifications Place Holder-->
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="SNOREGGSingle"]/graphicData/texPath</xpath>
+          <value>
+            <texPath>Things/Building/RIMkea/SNOREGGSingle</texPath>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="SNOREGGDouble"]/graphicData/texPath</xpath>
+          <value>
+            <texPath>Things/Building/RIMkea/SNOREGGDouble</texPath>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="KRUDNEPPSingle"]/graphicData/texPath</xpath>
+          <value>
+            <texPath>Things/Building/RIMkea/KRUDNEPPSingle</texPath>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="SLABNEPPDouble"]/graphicData/texPath</xpath>
+          <value>
+            <texPath>Things/Building/RIMkea/SLABNEPPDouble</texPath>
+          </value>
+        </li>
+        <!--Beddings Settings-->
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName="SNOREGGSingle"]/comps</xpath>
+          <value>
+            <li Class="SoftWarmBeds.CompProperties_MakeableBed">
+              <blanketDef>SNOREGGSingleBlanket</blanketDef>
+              <beddingDef>SingleBedding</beddingDef>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName="SNOREGGDouble"]/comps</xpath>
+          <value>
+            <li Class="SoftWarmBeds.CompProperties_MakeableBed">
+              <blanketDef>SNOREGGDoubleBlanket</blanketDef>
+              <beddingDef>DoubleBedding</beddingDef>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName="KRUDNEPPSingle"]/comps</xpath>
+          <value>
+            <li Class="SoftWarmBeds.CompProperties_MakeableBed">
+              <blanketDef>KRUDNEPPSingleBlanket</blanketDef>
+              <beddingDef>SingleBedding</beddingDef>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName="SLABNEPPDouble"]/comps</xpath>
+          <value>
+            <li Class="SoftWarmBeds.CompProperties_MakeableBed">
+              <blanketDef>SLABNEPPDoubleBlanket</blanketDef>
+              <beddingDef>DoubleBedding</beddingDef>
+            </li>
+          </value>
+        </li>
+        <!--BedRestEffectiveness Settings-->
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="SNOREGGSingle" or defName="SNOREGGDouble"]/statBases/BedRestEffectiveness</xpath>
+          <value>
+            <BedRestEffectiveness>0.55</BedRestEffectiveness>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="KRUDNEPPSingle" or defName="SLABNEPPDouble"]/statBases/BedRestEffectiveness</xpath>
+          <value>
+            <BedRestEffectiveness>0.5</BedRestEffectiveness>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="PILFURBed"]/statBases/BedRestEffectiveness</xpath>
+          <value>
+            <BedRestEffectiveness>0.4</BedRestEffectiveness>
+          </value>
+        </li>
+        <!--Comfort Settings-->
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="SNOREGGSingle" or defName="SNOREGGDouble"]/statBases/Comfort</xpath>
+          <value>
+            <Comfort>0.3</Comfort>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="KRUDNEPPSingle" or defName="SLABNEPPDouble"]/statBases/Comfort</xpath>
+          <value>
+            <Comfort>0.25</Comfort>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="PILFURBed"]/statBases/Comfort</xpath>
+          <value>
+            <Comfort>0.1</Comfort>
+          </value>
+        </li>
+        <!--Insulation Settings-->
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName="SNOREGGSingle" or defName="SNOREGGDouble"]/statBases</xpath>
+          <value>
+            <BedStuffEffectMultiplierInsulation_Cold>0.4</BedStuffEffectMultiplierInsulation_Cold>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName="KRUDNEPPSingle" or defName="SLABNEPPDouble"]/statBases</xpath>
+          <value>
+            <BedStuffEffectMultiplierInsulation_Cold>0.35</BedStuffEffectMultiplierInsulation_Cold>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName="PILFURBed"]/statBases</xpath>
+          <value>
+            <BedStuffEffectMultiplierInsulation_Cold>0.15</BedStuffEffectMultiplierInsulation_Cold>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>

@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="BedWithQualityBase">
+    <defName>Rede</defName>
+    <label>Hammock</label>
+    <description>The simplest and most practical bed ever invented, made from just some cloth or leather and strings. You can hang it anywhere, even take it with you for a good nap when travelling. Hanging in the air, it keeps you cool, which is perfect for a tropical weather! Not as comfortable as a regular bed, though.</description>
+    <graphicData>
+      <texPath>Things/Building/Rede</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(2.15,2.15)</drawSize>
+    </graphicData>
+    <castEdgeShadows>False</castEdgeShadows>
+    <statBases>
+      <Flammability>1.0</Flammability>
+      <Mass>4.5</Mass>
+      <BedRestEffectiveness>0.47</BedRestEffectiveness>
+      <ImmunityGainSpeedFactor>1.05</ImmunityGainSpeedFactor>
+      <SurgerySuccessChanceFactor>0.8</SurgerySuccessChanceFactor>
+      <Comfort>0.2</Comfort>
+      <WorkToBuild>750</WorkToBuild>
+      <BedStuffEffectMultiplierInsulation_Heat>0.5</BedStuffEffectMultiplierInsulation_Heat>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>Dresser</li>
+          <li>EndTable</li>
+        </linkableFacilities>
+      </li>
+    </comps>
+    <size>(1,2)</size>
+    <stuffCategories>
+      <li>Fabric</li>
+      <li>Leathery</li>
+    </stuffCategories>
+    <costStuffCount>35</costStuffCount>
+    <building>
+      <bed_showSleeperBody>true</bed_showSleeperBody>
+      <bed_healPerDay>4</bed_healPerDay>
+      <bed_caravansCanUse>true</bed_caravansCanUse>
+    </building>
+    <pathCost>50</pathCost>
+    <passability>Standable</passability>
+  </ThingDef>
+  <ThingDef Name="BlanketBase" ParentName="BuildingBase" Abstract="True">
+    <category>Building</category>
+    <selectable>false</selectable>
+    <thingClass>SoftWarmBeds.Building_Blanket</thingClass>
+    <label>bedding error</label>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <useHitPoints>false</useHitPoints>
+    <tickerType>Never</tickerType>
+    <destroyOnDrop>True</destroyOnDrop>
+    <tradeability>None</tradeability>
+    <stuffCategories>
+      <li>Fabric</li>
+      <li>Leathery</li>
+    </stuffCategories>
+    <comps>
+      <li>
+        <compClass>CompColorable</compClass>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="BlanketBase">
+    <defName>SingleBlanket</defName>
+    <label>single blanket</label>
+    <description>Keeps you warm</description>
+    <graphicData>
+      <texPath>Things/Building/SingleBlanket</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(2,2)</drawSize>
+      <damageData>
+        <rect>(0,0.05,1,1.95)</rect>
+      </damageData>
+    </graphicData>
+    <size>(1,2)</size>
+  </ThingDef>
+  <ThingDef ParentName="BlanketBase">
+    <defName>HospitalBlanket</defName>
+    <label>hospital blanket</label>
+    <graphicData>
+      <texPath>Things/Building/HospitalBlanket</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(2,2)</drawSize>
+      <damageData>
+        <rect>(0,0.05,1,1.95)</rect>
+      </damageData>
+    </graphicData>
+    <size>(1,2)</size>
+  </ThingDef>
+  <ThingDef ParentName="BlanketBase">
+    <defName>DoubleBlanket</defName>
+    <label>double blanket</label>
+    <graphicData>
+      <texPath>Things/Building/DoubleBlanket</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(2.05,2.05)</drawSize>
+      <damageData>
+        <rect>(0,0.05,1,1.95)</rect>
+      </damageData>
+    </graphicData>
+    <size>(2,2)</size>
+  </ThingDef>
+  <ThingDef ParentName="BlanketBase">
+    <defName>RoyalBlanket</defName>
+    <label>royal blanket</label>
+    <graphicData>
+      <texPath>Things/Building/RoyalBlanket</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(2.05,2.05)</drawSize>
+      <damageData>
+        <rect>(0,0.05,1,1.95)</rect>
+      </damageData>
+    </graphicData>
+    <size>(2,2)</size>
+  </ThingDef>
+  <ThingDef Name="BeddingBase" Abstract="True">
+    <thingClass>SoftWarmBeds.Bedding</thingClass>
+    <category>Item</category>
+    <selectable>True</selectable>
+    <pathCost>10</pathCost>
+    <useHitPoints>True</useHitPoints>
+    <techLevel>Medieval</techLevel>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+      <DeteriorationRate>2</DeteriorationRate>
+      <Beauty>-3</Beauty>
+    </statBases>
+    <altitudeLayer>Item</altitudeLayer>
+    <alwaysHaulable>True</alwaysHaulable>
+    <tickerType>Never</tickerType>
+    <comps>
+      <li Class="CompProperties_Forbiddable" />
+      <li>
+        <compClass>CompColorable</compClass>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="BeddingBase">
+    <defName>SingleBedding</defName>
+    <label>single bedding set</label>
+    <description>A set of mattress, pillows, linen and blanket for a single bed. Provides comfort and insulates the user while in bed.</description>
+    <graphicData>
+      <texPath>Things/Beddings/beddingSingle</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costStuffCount>60</costStuffCount>
+    <stuffCategories>
+      <li>Fabric</li>
+      <li>Leathery</li>
+    </stuffCategories>
+    <tradeability>Sellable</tradeability>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToMake>600</WorkToMake>
+      <Mass>10</Mass>
+    </statBases>
+    <thingCategories>
+      <li>Beddings</li>
+    </thingCategories>
+    <recipeMaker>
+      <researchPrerequisite>ComplexFurniture</researchPrerequisite>
+      <recipeUsers>
+        <li>ElectricTailoringBench</li>
+        <li>HandTailoringBench</li>
+        <li>CraftingSpot</li>
+      </recipeUsers>
+    </recipeMaker>
+  </ThingDef>
+  <ThingDef ParentName="BeddingBase">
+    <defName>DoubleBedding</defName>
+    <label>double bedding set</label>
+    <description>A set of mattress, pillows, linen and blanket for a double bed. Provides comfort and insulates the users while in bed.</description>
+    <graphicData>
+      <texPath>Things/Beddings/beddingDouble</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costStuffCount>100</costStuffCount>
+    <stuffCategories>
+      <li>Fabric</li>
+      <li>Leathery</li>
+    </stuffCategories>
+    <tradeability>Sellable</tradeability>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToMake>1000</WorkToMake>
+      <Mass>18</Mass>
+    </statBases>
+    <thingCategories>
+      <li>Beddings</li>
+    </thingCategories>
+    <recipeMaker>
+      <researchPrerequisite>ComplexFurniture</researchPrerequisite>
+      <recipeUsers>
+        <li>ElectricTailoringBench</li>
+        <li>HandTailoringBench</li>
+        <li>CraftingSpot</li>
+      </recipeUsers>
+    </recipeMaker>
+  </ThingDef>
+</Defs>

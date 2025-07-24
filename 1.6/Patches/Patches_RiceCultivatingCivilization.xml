@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!--【ZP】Rice cultivating civilization-->
+  <Operation Class="JPTools.PatchOperationFindModById">
+    <mods>
+      <li>tosenbo.Ricecultivatingcivilization</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <success>Always</success>
+      <operations>
+        <!--Function Extension-->
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName = "ZP_SuperiorStrawBed" or defName = "ZP_SuperiorDoubleStrawBed"]</xpath>
+          <value>
+            <inspectorTabs>
+              <li>SoftWarmBeds.ITab_Bedding</li>
+            </inspectorTabs>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName = "ZP_SuperiorStrawBed" or defName = "ZP_SuperiorDoubleStrawBed"]</xpath>
+          <value>
+            <building>
+              <fixedStorageSettings>
+                <filter>
+                  <categories>
+                    <li>Textiles</li>
+                  </categories>
+                </filter>
+              </fixedStorageSettings>
+              <defaultStorageSettings>
+                <filter>
+                  <categories>
+                    <li>Textiles</li>
+                  </categories>
+                </filter>
+              </defaultStorageSettings>
+            </building>
+          </value>
+        </li>
+        <!--Beddings Settings-->
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName = "ZP_SuperiorStrawBed"]</xpath>
+          <value>
+            <comps>
+              <li Class="SoftWarmBeds.CompProperties_MakeableBed">
+                <!--<blanketDef>SingleBlanket</blanketDef>-->
+                <beddingDef>SingleBedding</beddingDef>
+              </li>
+            </comps>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName = "ZP_SuperiorDoubleStrawBed"]</xpath>
+          <value>
+            <comps>
+              <li Class="SoftWarmBeds.CompProperties_MakeableBed">
+                <!--<blanketDef>SingleBlanket</blanketDef>-->
+                <beddingDef>DoubleBedding</beddingDef>
+              </li>
+            </comps>
+          </value>
+        </li>
+        <!--Stats-->
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName = "ZP_SuperiorStrawBed" or defName = "ZP_SuperiorDoubleStrawBed"]/statBases/BedRestEffectiveness</xpath>
+          <value>
+            <BedRestEffectiveness>0.42</BedRestEffectiveness>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName = "ZP_SuperiorStrawBed" or defName = "ZP_SuperiorDoubleStrawBed"]/statBases/Comfort</xpath>
+          <value>
+            <Comfort>0.35</Comfort>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName = "ZP_SuperiorStrawBed" or defName = "ZP_SuperiorDoubleStrawBed"]/statBases</xpath>
+          <value>
+            <BedStuffEffectMultiplierInsulation_Cold>0.3</BedStuffEffectMultiplierInsulation_Cold>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName = "StrawBed" or defName = "StrawBed"]/statBases/BedRestEffectiveness</xpath>
+          <value>
+            <BedRestEffectiveness>0.3</BedRestEffectiveness>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName = "StrawBed" or defName = "StrawBed"]/statBases/Comfort</xpath>
+          <value>
+            <Comfort>0.1</Comfort>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName = "StrawBed" or defName = "StrawBed"]/statBases</xpath>
+          <value>
+            <BedStuffEffectMultiplierInsulation_Cold>0.1</BedStuffEffectMultiplierInsulation_Cold>
+          </value>
+        </li>
+        <!--correction to use colorTwo-->
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[@ParentName="StrawBedBase" and not(defName = "StrawBed" or defName = "StrawBed")]/graphicData</xpath>
+          <value>
+            <colorTwo>(0,0,0)</colorTwo>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>

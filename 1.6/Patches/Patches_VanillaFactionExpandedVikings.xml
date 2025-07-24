@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+  <!--Vanilla Factions Expanded - Vikings-->
+  <Operation Class="JPTools.PatchOperationFindModById">
+    <mods>
+      <li>OskarPotocki.VFE.Vikings</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <success>Normal</success>
+      <operations>
+        <!--Extra Defs-->
+        <li Class="PatchOperationAdd">
+          <xpath>Defs</xpath>
+          <value>
+            <ThingDef ParentName="BlanketBase">
+              <defName>SingleFurBedBlanket</defName>
+              <label>fur single blanket</label>
+              <description>Keeps you warm</description>
+              <graphicData>
+                <texPath>Things/Building/VFEVikings/SingleFurBedBlanket</texPath>
+                <graphicClass>Graphic_Multi</graphicClass>
+                <shaderType>CutoutComplex</shaderType>
+                <drawSize>(2,2)</drawSize>
+                <damageData>
+                  <rect>(0,0.05,1,1.95)</rect>
+                </damageData>
+              </graphicData>
+              <size>(1,2)</size>
+            </ThingDef>
+            <ThingDef ParentName="BlanketBase">
+              <defName>DoubleFurBedBlanket</defName>
+              <label>fur double blanket</label>
+              <graphicData>
+                <texPath>Things/Building/VFEVikings/DoubleFurBedBlanket</texPath>
+                <graphicClass>Graphic_Multi</graphicClass>
+                <shaderType>CutoutComplex</shaderType>
+                <drawSize>(2.05,2.05)</drawSize>
+                <damageData>
+                  <rect>(0,0.05,1,1.95)</rect>
+                </damageData>
+              </graphicData>
+              <size>(2,2)</size>
+            </ThingDef>
+            <ThingDef ParentName="BeddingBase">
+              <defName>SingleTribalBedding</defName>
+              <label>fur bedding</label>
+              <description>A pile of fur to use as a blanket and a rudimentary pillow. Not very comfortable but much better than nothing and insulates the user while in bed.</description>
+              <graphicData>
+                <texPath>Things/Beddings/FurBeddingSingle</texPath>
+                <graphicClass>Graphic_Single</graphicClass>
+              </graphicData>
+              <costStuffCount>72</costStuffCount>
+              <stuffCategories>
+                <li>Leathery</li>
+              </stuffCategories>
+              <tradeability>Sellable</tradeability>
+              <statBases>
+                <MaxHitPoints>100</MaxHitPoints>
+                <WorkToMake>400</WorkToMake>
+                <Mass>10</Mass>
+              </statBases>
+              <thingCategories>
+                <li>Beddings</li>
+              </thingCategories>
+              <recipeMaker>
+                <recipeUsers>
+                  <li>ElectricTailoringBench</li>
+                  <li>HandTailoringBench</li>
+                  <li>CraftingSpot</li>
+                </recipeUsers>
+              </recipeMaker>
+            </ThingDef>
+            <ThingDef ParentName="BeddingBase">
+              <defName>DoubleTribalBedding</defName>
+              <label>large fur bedding</label>
+              <description>A big pile of fur to use as a blanket with two makeshift pillows. Not very comfortable but much better than nothing and insulates the users while in bed.</description>
+              <graphicData>
+                <texPath>Things/Beddings/FurBeddingDouble</texPath>
+                <graphicClass>Graphic_Single</graphicClass>
+              </graphicData>
+              <costStuffCount>120</costStuffCount>
+              <stuffCategories>
+                <li>Leathery</li>
+              </stuffCategories>
+              <tradeability>Sellable</tradeability>
+              <statBases>
+                <MaxHitPoints>100</MaxHitPoints>
+                <WorkToMake>800</WorkToMake>
+                <Mass>18</Mass>
+              </statBases>
+              <thingCategories>
+                <li>Beddings</li>
+              </thingCategories>
+              <recipeMaker>
+                <recipeUsers>
+                  <li>ElectricTailoringBench</li>
+                  <li>HandTailoringBench</li>
+                  <li>CraftingSpot</li>
+                </recipeUsers>
+              </recipeMaker>
+            </ThingDef>
+          </value>
+        </li>
+        <!-- Function Extension-->
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName = "VFEV_FurBed" or defName = "VFEV_DoubleFurBed"]</xpath>
+          <value>
+            <inspectorTabs>
+              <li>SoftWarmBeds.ITab_Bedding</li>
+            </inspectorTabs>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName = "VFEV_FurBed" or defName = "VFEV_DoubleFurBed"]/building</xpath>
+          <value>
+            <fixedStorageSettings>
+              <filter>
+                <categories>
+                  <li>Textiles</li>
+                </categories>
+              </filter>
+            </fixedStorageSettings>
+            <defaultStorageSettings>
+              <filter>
+                <categories>
+                  <li>Textiles</li>
+                </categories>
+              </filter>
+            </defaultStorageSettings>
+          </value>
+        </li>
+        <!--Peserving Menu Icon-->
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName = "VFEV_FurBed" or defName = "VFEV_DoubleFurBed"]</xpath>
+          <value>
+            <uiIconPath />
+          </value>
+        </li>
+        <li Class="JPTools.PatchOperationCopy">
+          <xpath>/Defs/ThingDef[defName = "VFEV_FurBed"]/graphicData/texPath</xpath>
+          <toXpath>/Defs/ThingDef[defName = "VFEV_FurBed"]/uiIconPath</toXpath>
+          <append>_south</append>
+        </li>
+        <li Class="JPTools.PatchOperationCopy">
+          <xpath>/Defs/ThingDef[defName = "VFEV_DoubleFurBed"]/graphicData/texPath</xpath>
+          <toXpath>/Defs/ThingDef[defName = "VFEV_DoubleFurBed"]/uiIconPath</toXpath>
+          <append>_south</append>
+        </li>
+        <!--Graphic Modifications Place Holder-->
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="VFEV_FurBed"]/graphicData/texPath</xpath>
+          <value>
+            <texPath>Things/Building/VFEVikings/FurBed</texPath>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="VFEV_DoubleFurBed"]/graphicData/texPath</xpath>
+          <value>
+            <texPath>Things/Building/VFEVikings/DoubleFurBed</texPath>
+          </value>
+        </li>
+        <!--Research Changer-->
+        <li Class="PatchOperationFindMod">
+          <mods>
+            <li>Vanilla Furniture Expanded</li>
+          </mods>
+          <match Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="SingleTribalBedding" or defName="DoubleTribalBedding"]/recipeMaker</xpath>
+            <value>
+              <researchPrerequisite>MF_BasicFurniture</researchPrerequisite>
+            </value>
+          </match>
+        </li>
+        <!--Beddings Settings-->
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName="VFEV_FurBed"]/comps</xpath>
+          <value>
+            <li Class="SoftWarmBeds.CompProperties_MakeableBed">
+              <blanketDef>SingleFurBedBlanket</blanketDef>
+              <beddingDef>SingleTribalBedding</beddingDef>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName="VFEV_DoubleFurBed"]/comps</xpath>
+          <value>
+            <li Class="SoftWarmBeds.CompProperties_MakeableBed">
+              <blanketDef>DoubleFurBedBlanket</blanketDef>
+              <beddingDef>DoubleTribalBedding</beddingDef>
+            </li>
+          </value>
+        </li>
+        <!--BedRestEffectiveness Settings-->
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="VFEV_FurBed" or defName="VFEV_DoubleFurBed"]/statBases/BedRestEffectiveness</xpath>
+          <value>
+            <BedRestEffectiveness>0.42</BedRestEffectiveness>
+          </value>
+        </li>
+        <!--Comfort Settings-->
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="VFEV_FurBed" or defName="VFEV_DoubleFurBed"]/statBases/Comfort</xpath>
+          <value>
+            <Comfort>0.20</Comfort>
+          </value>
+        </li>
+        <!--Insulation Settings-->
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName="VFEV_FurBed" or defName="VFEV_DoubleFurBed"]/statBases</xpath>
+          <value>
+            <BedStuffEffectMultiplierInsulation_Cold>0.2</BedStuffEffectMultiplierInsulation_Cold>
+          </value>
+        </li>
+        <!--Bed Recipe Changes-->
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="VFEV_FurBed" or defName="VFEV_DoubleFurBed"]/stuffCategories</xpath>
+          <value>
+            <stuffCategories>
+              <li>Woody</li>
+            </stuffCategories>
+          </value>
+        </li>
+        <li Class="PatchOperationRemove">
+          <xpath>Defs/ThingDef[defName="VFEV_FurBed" or defName="VFEV_DoubleFurBed"]/costList</xpath>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="VFEV_FurBed"]/costStuffCount</xpath>
+          <value>
+            <costStuffCount>25</costStuffCount>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="VFEV_DoubleFurBed"]/costStuffCount</xpath>
+          <value>
+            <costStuffCount>45</costStuffCount>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>

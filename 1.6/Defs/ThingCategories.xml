@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingCategoryDef>
+    <defName>Beddings</defName>
+    <label>beddings</label>
+    <!--<parent>Manufactured</parent>-->
+    <parent>Apparel</parent>
+    <iconPath>UI/beddingSingle</iconPath>
+    <resourceReadoutRoot>true</resourceReadoutRoot>
+  </ThingCategoryDef>
+</Defs>

@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+  <!--Vanilla Furniture Expanded-->
+  <!--Core Module-->
+  <Operation Class="JPTools.PatchOperationFindModById">
+    <mods>
+      <li>VanillaExpanded.VFECore</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <success>Always</success>
+      <operations>
+        <!--Extra Defs-->
+        <li Class="PatchOperationAdd">
+          <xpath>Defs</xpath>
+          <value>
+            <ThingDef ParentName="BlanketBase">
+              <defName>SpacerBedBlanket</defName>
+              <label>ergonomic single blanket</label>
+              <description>Keeps you warm</description>
+              <graphicData>
+                <texPath>Things/Building/VanillaFurnitureExpanded/SpacerBedBlanket</texPath>
+                <graphicClass>Graphic_Multi</graphicClass>
+                <shaderType>CutoutComplex</shaderType>
+                <drawSize>(2,2)</drawSize>
+                <damageData>
+                  <rect>(0,0.05,1,1.95)</rect>
+                </damageData>
+              </graphicData>
+              <size>(1,2)</size>
+            </ThingDef>
+            <ThingDef ParentName="BlanketBase">
+              <defName>SpacerDoubleBedBlanket</defName>
+              <label>ergonomic double blanket</label>
+              <graphicData>
+                <texPath>Things/Building/VanillaFurnitureExpanded/SpacerDoubleBedBlanket</texPath>
+                <graphicClass>Graphic_Multi</graphicClass>
+                <shaderType>CutoutComplex</shaderType>
+                <drawSize>(2.05,2.05)</drawSize>
+                <damageData>
+                  <rect>(0,0.05,1,1.95)</rect>
+                </damageData>
+              </graphicData>
+              <size>(2,2)</size>
+            </ThingDef>
+            <ThingDef ParentName="BlanketBase">
+              <defName>KingsizeBedBlanket</defName>
+              <label>kingsize double blanket</label>
+              <graphicData>
+                <texPath>Things/Building/VanillaFurnitureExpanded/KingsizeBedBlanket</texPath>
+                <graphicClass>Graphic_Multi</graphicClass>
+                <shaderType>CutoutComplex</shaderType>
+                <drawSize>(4.05,4.05)</drawSize>
+                <damageData>
+                  <rect>(0,0.05,1,1.95)</rect>
+                </damageData>
+              </graphicData>
+              <size>(2,2)</size>
+            </ThingDef>
+          </value>
+        </li>
+        <!--Function Extension-->
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName="Bed_Kingsize" or defName="Bed_Ergonomic" or defName="Bed_DoubleErgonomic"]</xpath>
+          <value>
+            <inspectorTabs>
+              <li>SoftWarmBeds.ITab_Bedding</li>
+            </inspectorTabs>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName="Bed_Kingsize"]/building</xpath>
+          <value>
+            <fixedStorageSettings>
+              <filter>
+                <categories>
+                  <li>Textiles</li>
+                </categories>
+              </filter>
+            </fixedStorageSettings>
+            <defaultStorageSettings>
+              <filter>
+                <categories>
+                  <li>Textiles</li>
+                </categories>
+              </filter>
+            </defaultStorageSettings>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName="Bed_Ergonomic" or defName="Bed_DoubleErgonomic"]</xpath>
+          <value>
+            <building>
+              <fixedStorageSettings>
+                <filter>
+                  <categories>
+                    <li>Textiles</li>
+                  </categories>
+                </filter>
+              </fixedStorageSettings>
+              <defaultStorageSettings>
+                <filter>
+                  <categories>
+                    <li>Textiles</li>
+                  </categories>
+                </filter>
+              </defaultStorageSettings>
+            </building>
+          </value>
+        </li>
+        <!--Peserving Menu Icon-->
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName = "Bed_Kingsize" or defName = "Bed_Ergonomic" or defName = "Bed_DoubleErgonomic"]</xpath>
+          <value>
+            <uiIconPath />
+          </value>
+        </li>
+        <li Class="JPTools.PatchOperationCopy">
+          <xpath>/Defs/ThingDef[defName = "Bed_Kingsize"]/graphicData/texPath</xpath>
+          <toXpath>/Defs/ThingDef[defName = "Bed_Kingsize"]/uiIconPath</toXpath>
+          <append>_south</append>
+        </li>
+        <li Class="JPTools.PatchOperationCopy">
+          <xpath>/Defs/ThingDef[defName = "Bed_Ergonomic"]/graphicData/texPath</xpath>
+          <toXpath>/Defs/ThingDef[defName = "Bed_Ergonomic"]/uiIconPath</toXpath>
+          <append>_south</append>
+        </li>
+        <li Class="JPTools.PatchOperationCopy">
+          <xpath>/Defs/ThingDef[defName = "Bed_DoubleErgonomic"]/graphicData/texPath</xpath>
+          <toXpath>/Defs/ThingDef[defName = "Bed_DoubleErgonomic"]/uiIconPath</toXpath>
+          <append>_south</append>
+        </li>
+        <!--Graphic Modifications Place Holder-->
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="Bed_Kingsize"]/graphicData/texPath</xpath>
+          <value>
+            <texPath>Things/Building/VanillaFurnitureExpanded/KingsizeBed</texPath>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="Bed_Ergonomic"]/graphicData/texPath</xpath>
+          <value>
+            <texPath>Things/Building/VanillaFurnitureExpanded/SpacerBed</texPath>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="Bed_DoubleErgonomic"]/graphicData/texPath</xpath>
+          <value>
+            <texPath>Things/Building/VanillaFurnitureExpanded/SpacerDoubleBed</texPath>
+          </value>
+        </li>
+        <!--Beddings Settings-->
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName="Bed_Kingsize"]/comps</xpath>
+          <value>
+            <li Class="SoftWarmBeds.CompProperties_MakeableBed">
+              <blanketDef>KingsizeBedBlanket</blanketDef>
+              <beddingDef>DoubleBedding</beddingDef>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName="Bed_Ergonomic"]</xpath>
+          <value>
+            <comps>
+              <li Class="SoftWarmBeds.CompProperties_MakeableBed">
+                <blanketDef>SpacerBedBlanket</blanketDef>
+                <beddingDef>SingleBedding</beddingDef>
+              </li>
+            </comps>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName="Bed_DoubleErgonomic"]</xpath>
+          <value>
+            <comps>
+              <li Class="SoftWarmBeds.CompProperties_MakeableBed">
+                <blanketDef>SpacerDoubleBedBlanket</blanketDef>
+                <beddingDef>DoubleBedding</beddingDef>
+              </li>
+            </comps>
+          </value>
+        </li>
+        <!--BedRestEffectiveness Settings-->
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName="Bed_Ergonomic" or defName="Bed_DoubleErgonomic"]/statBases</xpath>
+          <value>
+            <BedRestEffectiveness>0.65</BedRestEffectiveness>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName = "Bed_Kingsize"]/statBases/BedRestEffectiveness</xpath>
+          <value>
+            <BedRestEffectiveness>0.6</BedRestEffectiveness>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName="Bed_Simple"]/statBases</xpath>
+          <value>
+            <BedRestEffectiveness>0.45</BedRestEffectiveness>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName="Bed_StoneSlab"]/statBases</xpath>
+          <value>
+            <BedRestEffectiveness>0.4</BedRestEffectiveness>
+          </value>
+        </li>
+        <!--Comfort Settings-->
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName="Bed_Ergonomic" or defName="Bed_DoubleErgonomic"]/statBases</xpath>
+          <value>
+            <Comfort>0.5</Comfort>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="Bed_Kingsize"]/statBases/Comfort</xpath>
+          <value>
+            <Comfort>0.45</Comfort>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName="Bed_Simple"]/statBases</xpath>
+          <value>
+            <Comfort>0.15</Comfort>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName="Bed_StoneSlab"]/statBases</xpath>
+          <value>
+            <Comfort>0.1</Comfort>
+          </value>
+        </li>
+        <!--Insulation Settings-->
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName="Bed_Ergonomic" or defName="Bed_DoubleErgonomic"]/statBases</xpath>
+          <value>
+            <BedStuffEffectMultiplierInsulation_Cold>0.4</BedStuffEffectMultiplierInsulation_Cold>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName="Bed_Kingsize"]/statBases</xpath>
+          <value>
+            <BedStuffEffectMultiplierInsulation_Cold>0.55</BedStuffEffectMultiplierInsulation_Cold>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName="Bed_Simple" or defName="Bed_StoneSlab"]/statBases</xpath>
+          <value>
+            <BedStuffEffectMultiplierInsulation_Cold>0.1</BedStuffEffectMultiplierInsulation_Cold>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+  <!--Medical Module-->
+  <Operation Class="JPTools.PatchOperationFindModById">
+    <mods>
+      <li>VanillaExpanded.VFEMedical</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <success>Always</success>
+      <operations>
+        <!--BedRestEffectiveness Settings-->
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="Bed_CryptoBed"]/statBases/BedRestEffectiveness</xpath>
+          <value>
+            <BedRestEffectiveness>0.9</BedRestEffectiveness>
+          </value>
+        </li>
+        <!--Comfort Settings-->
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="Bed_OperatingTable"]/statBases/Comfort</xpath>
+          <value>
+            <Comfort>0.3</Comfort>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="Bed_CryptoBed"]/statBases/Comfort</xpath>
+          <value>
+            <Comfort>0.75</Comfort>
+          </value>
+        </li>
+        <!--Insulation Settings-->
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="Bed_OperatingTable"]/statBases/BedStuffEffectMultiplierInsulation_Cold</xpath>
+          <value>
+            <BedStuffEffectMultiplierInsulation_Cold>0.1</BedStuffEffectMultiplierInsulation_Cold>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="Bed_CryptoBed"]/statBases/BedStuffEffectMultiplierInsulation_Cold</xpath>
+          <value>
+            <BedStuffEffectMultiplierInsulation_Cold>0.5</BedStuffEffectMultiplierInsulation_Cold>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+  <!--Spacer Module-->
+  <Operation Class="JPTools.PatchOperationFindModById">
+    <mods>
+      <li>VanillaExpanded.VFESpacer</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <success>Always</success>
+      <operations>
+        <!--Extra Defs-->
+        <li Class="PatchOperationAdd">
+          <xpath>Defs</xpath>
+          <value>
+            <ThingDef ParentName="BlanketBase">
+              <defName>AdvBedBlanket</defName>
+              <label>advanced single blanket</label>
+              <description>Keeps you warm</description>
+              <graphicData>
+                <texPath>Things/Building/VanillaFurnitureExpanded/AdvancedBedBlanket</texPath>
+                <graphicClass>Graphic_Multi</graphicClass>
+                <shaderType>CutoutComplex</shaderType>
+                <drawSize>(2,2)</drawSize>
+                <damageData>
+                  <rect>(0,0.05,1,1.95)</rect>
+                </damageData>
+              </graphicData>
+              <size>(1,2)</size>
+            </ThingDef>
+            <ThingDef ParentName="BlanketBase">
+              <defName>AdvDoubleBedBlanket</defName>
+              <label>advanced double blanket</label>
+              <graphicData>
+                <texPath>Things/Building/VanillaFurnitureExpanded/AdvancedBedDoubleBlanket</texPath>
+                <graphicClass>Graphic_Multi</graphicClass>
+                <shaderType>CutoutComplex</shaderType>
+                <drawSize>(2.05,2.05)</drawSize>
+                <damageData>
+                  <rect>(0,0.05,1,1.95)</rect>
+                </damageData>
+              </graphicData>
+              <size>(2,2)</size>
+            </ThingDef>
+          </value>
+        </li>
+        <!--Function Extension-->
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName="Bed_AdvBed" or defName="Bed_AdvDoubleBed"]</xpath>
+          <value>
+            <inspectorTabs>
+              <li>SoftWarmBeds.ITab_Bedding</li>
+            </inspectorTabs>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName="Bed_AdvBed" or defName="Bed_AdvDoubleBed"]/building</xpath>
+          <value>
+            <fixedStorageSettings>
+              <filter>
+                <categories>
+                  <li>Textiles</li>
+                </categories>
+              </filter>
+            </fixedStorageSettings>
+            <defaultStorageSettings>
+              <filter>
+                <categories>
+                  <li>Textiles</li>
+                </categories>
+              </filter>
+            </defaultStorageSettings>
+          </value>
+        </li>
+        <!--Peserving Menu Icon-->
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName = "Bed_AdvBed" or defName = "Bed_AdvDoubleBed"]</xpath>
+          <value>
+            <uiIconPath />
+          </value>
+        </li>
+        <li Class="JPTools.PatchOperationCopy">
+          <xpath>/Defs/ThingDef[defName = "Bed_AdvBed"]/graphicData/texPath</xpath>
+          <toXpath>/Defs/ThingDef[defName = "Bed_AdvBed"]/uiIconPath</toXpath>
+          <append>_south</append>
+        </li>
+        <li Class="JPTools.PatchOperationCopy">
+          <xpath>/Defs/ThingDef[defName = "Bed_AdvDoubleBed"]/graphicData/texPath</xpath>
+          <toXpath>/Defs/ThingDef[defName = "Bed_AdvDoubleBed"]/uiIconPath</toXpath>
+          <append>_south</append>
+        </li>
+        <!--Graphic Modifications Place Holder-->
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="Bed_AdvBed"]/graphicData/texPath</xpath>
+          <value>
+            <texPath>Things/Building/VanillaFurnitureExpanded/AdvancedBed</texPath>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="Bed_AdvDoubleBed"]/graphicData/texPath</xpath>
+          <value>
+            <texPath>Things/Building/VanillaFurnitureExpanded/AdvancedBedDouble</texPath>
+          </value>
+        </li>
+        <!--Beddings Settings-->
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName="Bed_AdvBed"]/comps</xpath>
+          <value>
+            <li Class="SoftWarmBeds.CompProperties_MakeableBed">
+              <blanketDef>AdvBedBlanket</blanketDef>
+              <beddingDef>SingleBedding</beddingDef>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName="Bed_AdvDoubleBed"]/comps</xpath>
+          <value>
+            <li Class="SoftWarmBeds.CompProperties_MakeableBed">
+              <blanketDef>AdvDoubleBedBlanket</blanketDef>
+              <beddingDef>DoubleBedding</beddingDef>
+            </li>
+          </value>
+        </li>
+        <!--BedRestEffectiveness Settings-->
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="Bed_AdvBed" or defName="Bed_AdvDoubleBed"]/statBases/BedRestEffectiveness</xpath>
+          <value>
+            <BedRestEffectiveness>0.7</BedRestEffectiveness>
+          </value>
+        </li>
+        <!--Comfort Settings-->
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="Bed_AdvBed" or defName="Bed_AdvDoubleBed"]/statBases/Comfort</xpath>
+          <value>
+            <Comfort>0.55</Comfort>
+          </value>
+        </li>
+        <!--Insulation Settings-->
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName="Bed_AdvBed" or defName="Bed_AdvDoubleBed"]/statBases</xpath>
+          <value>
+            <BedStuffEffectMultiplierInsulation_Cold>0.6</BedStuffEffectMultiplierInsulation_Cold>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>
