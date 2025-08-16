@@ -1,5 +1,8 @@
 # Changelog for JPTSoftWarmBeds
 
+1.6.3 - Fixed Odyssey ship travel issue. Added support for [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3531523881]Loft Beds[/url] thanks to PathogenXD
+
+
 1.6.2 - Fixed VFE patch, thanks to TheMiggiestMig
 
 

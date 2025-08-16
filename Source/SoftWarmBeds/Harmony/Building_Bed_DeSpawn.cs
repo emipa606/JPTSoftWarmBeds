@@ -8,8 +8,13 @@ namespace SoftWarmBeds;
 [HarmonyPatch(typeof(Building_Bed), nameof(Building_Bed.DeSpawn))]
 public class Building_Bed_DeSpawn
 {
-    public static void Prefix(object __instance)
+    public static void Prefix(object __instance, DestroyMode mode)
     {
+        if (mode == DestroyMode.WillReplace)
+        {
+            return;
+        }
+
         if (__instance is not Building_Bed bed)
         {
             return;
