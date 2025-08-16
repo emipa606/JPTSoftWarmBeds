@@ -159,7 +159,8 @@ public class CompMakeableBed : CompFlickable, IStoreSettingsParent
             }
         }
 
-        blanket.Graphic.Draw(parent.DrawPos + Altitudes.AltIncVect, parent.Rotation, blanket);
+        // Small hack to make sure our bedding is drawn just _slightly_ over the bed frame (compatibility for beds on different layers like Loft Beds)
+        blanket.Graphic.Draw(parent.DrawPos + (Altitudes.AltIncVect / 2.0f), parent.Rotation, blanket);
     }
 
     public override void PostDraw()

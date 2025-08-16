@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="JPTools.PatchOperationFindModById">
+    <mods>
+      <li>Nekoemi.LoftBed</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <success>Always</success>
+      <operations>
+        <!--Extra Defs-->
+        <li Class="PatchOperationAdd">
+          <xpath>Defs</xpath>
+          <value>
+            <ThingDef ParentName="BlanketBase">
+              <defName>LoftBed_SingleBlanket</defName>
+              <label>Loft bed single blanket</label>
+              <description>Keeps you warm</description>
+              <graphicData>
+                <texPath>Things/Building/LoftBeds/LoftBed_SingleBlanket</texPath>
+                <graphicClass>Graphic_Multi</graphicClass>
+                <shaderType>CutoutComplex</shaderType>
+                <drawSize>(2,3)</drawSize>
+                <damageData>
+                  <rect>(0,0.05,1,1.95)</rect>
+                </damageData>
+              </graphicData>
+              <size>(1,2)</size>
+            </ThingDef>
+            <ThingDef ParentName="BlanketBase">
+              <defName>LoftBed_DoubleBlanket</defName>
+              <label>Loft bed double blanket</label>
+              <graphicData>
+                <texPath>Things/Building/LoftBeds/LoftBed_DoubleBlanket</texPath>
+                <graphicClass>Graphic_Multi</graphicClass>
+                <shaderType>CutoutComplex</shaderType>
+                <drawSize>(3,3)</drawSize>
+                <damageData>
+                  <rect>(0,0.05,2,1.95)</rect>
+                </damageData>
+              </graphicData>
+              <size>(2,2)</size>
+            </ThingDef>
+          </value>
+        </li>
+        <!--Function Extension-->
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName = "LoftBed" or defName = "DoubleLoftBed"]</xpath>
+          <value>
+            <inspectorTabs>
+              <li>SoftWarmBeds.ITab_Bedding</li>
+            </inspectorTabs>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName = "LoftBed" or defName = "DoubleLoftBed"]/building</xpath>
+          <value>
+            <fixedStorageSettings>
+              <filter>
+                <categories>
+                  <li>Textiles</li>
+                </categories>
+              </filter>
+            </fixedStorageSettings>
+            <defaultStorageSettings>
+              <filter>
+                <categories>
+                  <li>Textiles</li>
+                </categories>
+              </filter>
+            </defaultStorageSettings>
+          </value>
+        </li>
+        <!-- Use unmade bed (south) as menu icon-->
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName = "LoftBed" or defName = "DoubleLoftBed"]</xpath>
+          <value>
+            <uiIconPath />
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName = "LoftBed" or defName = "DoubleLoftBed"]/uiIconScale</xpath>
+          <value>
+            <uiIconScale>1.0</uiIconScale>
+          </value>
+        </li>
+        <li Class="JPTools.PatchOperationCopy">
+          <xpath>/Defs/ThingDef[defName = "LoftBed"]/graphicData/texPath</xpath>
+          <toXpath>/Defs/ThingDef[defName = "LoftBed"]/uiIconPath</toXpath>
+          <append>_south</append>
+        </li>
+        <li Class="JPTools.PatchOperationCopy">
+          <xpath>/Defs/ThingDef[defName = "DoubleLoftBed"]/graphicData/texPath</xpath>
+          <toXpath>/Defs/ThingDef[defName = "DoubleLoftBed"]/uiIconPath</toXpath>
+          <append>_south</append>
+        </li>
+        <!--Graphic Modifications-->
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName = "LoftBed"]/graphicData/texPath</xpath>
+          <value>
+            <texPath>Things/Building/LoftBeds/LoftBed</texPath>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName = "DoubleLoftBed"]/graphicData/texPath</xpath>
+          <value>
+            <texPath>Things/Building/LoftBeds/DoubleLoftBed</texPath>
+          </value>
+        </li>
+        <!--Beddings Settings-->
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName = "LoftBed"]/comps</xpath>
+          <value>
+            <li Class="SoftWarmBeds.CompProperties_MakeableBed">
+              <blanketDef>LoftBed_SingleBlanket</blanketDef>
+              <beddingDef>SingleBedding</beddingDef>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName = "DoubleLoftBed"]/comps</xpath>
+          <value>
+            <li Class="SoftWarmBeds.CompProperties_MakeableBed">
+              <blanketDef>LoftBed_DoubleBlanket</blanketDef>
+              <beddingDef>DoubleBedding</beddingDef>
+            </li>
+          </value>
+        </li>
+        <!--BedRestEffectiveness Settings-->
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName = "LoftBed" or defName = "DoubleLoftBed"]/statBases/BedRestEffectiveness</xpath>
+          <value>
+            <BedRestEffectiveness>0.5</BedRestEffectiveness>
+          </value>
+        </li>
+        <!--Comfort Settings-->
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName = "LoftBed" or defName = "DoubleLoftBed"]/statBases/Comfort</xpath>
+          <value>
+            <Comfort>0.25</Comfort>
+          </value>
+        </li>
+        <!--Insulation Settings-->
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName = "LoftBed" or defName = "DoubleLoftBed"]/statBases</xpath>
+          <value>
+            <BedStuffEffectMultiplierInsulation_Cold>0.35</BedStuffEffectMultiplierInsulation_Cold>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>
