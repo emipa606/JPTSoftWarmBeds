@@ -35,6 +35,7 @@
     <li>VanillaExpanded.VFEMedical</li>
     <li>rimofmadness.vampires</li>
     <li>sig.mantodeanrace</li>
+    <li>Nekoemi.LoftBed</li>
   </loadAfter>
   <description>[img]https://i.imgur.com/buuPQel.png[/img]
 Update of jptrrss mod https://steamcommunity.com/sharedfiles/filedetails/?id=1713295858
@@ -118,5 +119,5 @@ Textures for Gloomy Furniture and Gloomy Vanilla compatibility were created by D
 [/list] 
 
 [url=https://steamcommunity.com/sharedfiles/filedetails/changelog/3006469889][img]https://img.shields.io/github/v/release/emipa606/JPTSoftWarmBeds?label=latest%20version&amp;style=plastic&amp;color=9f1111&amp;labelColor=black[/img][/url] | tags:  blankets,  softness</description>
-  <modVersion IgnoreIfNoMatchingField="True">1.6.3</modVersion>
+  <modVersion IgnoreIfNoMatchingField="True">1.6.4</modVersion>
 </ModMetaData>
