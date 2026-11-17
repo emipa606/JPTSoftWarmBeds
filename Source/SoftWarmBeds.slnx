@@ -9,4 +9,32 @@
   <Project Path="SoftWarmBeds/SoftWarmBeds.csproj">
     <BuildType Project="Release" />
   </Project>
+  <Folder Name="/XML/1.7/Defs/">
+    <File Path="../1.7/Defs/Jobs.xml" />
+    <File Path="../1.7/Defs/Stats.xml" />
+    <File Path="../1.7/Defs/ThingCategories.xml" />
+    <File Path="../1.7/Defs/Things.xml" />
+    <File Path="../1.7/Defs/WorkGiver.xml" />
+  </Folder>
+  <Folder Name="/XML/About/">
+    <File Path="../About/about.xml" />
+  </Folder>
+  <Folder Name="/XML/1.7/Patches/">
+    <File Path="../1.7/Patches/Patches_BabyAndChildren.xml" />
+    <File Path="../1.7/Patches/Patches_bedsDrawerType.xml" />
+    <File Path="../1.7/Patches/Patches_GloomyFurniture.xml" />
+    <File Path="../1.7/Patches/Patches_GloomyVanilla.xml" />
+    <File Path="../1.7/Patches/Patches_Ideology.xml" />
+    <File Path="../1.7/Patches/Patches_LoftBeds.xml" />
+    <File Path="../1.7/Patches/Patches_NanoRepairTech.xml" />
+    <File Path="../1.7/Patches/Patches_RiceCultivatingCivilization.xml" />
+    <File Path="../1.7/Patches/Patches_RIMkea.xml" />
+    <File Path="../1.7/Patches/Patches_SparklingWorlds.xml" />
+    <File Path="../1.7/Patches/Patches_VanillaFactionExpandedVikings.xml" />
+    <File Path="../1.7/Patches/Patches_VanillaFurnitureExpanded.xml" />
+    <File Path="../1.7/Patches/Patches.xml" />
+  </Folder>
+  <Folder Name="/XML/Languages/English/Keyed/">
+    <File Path="../Languages/English/Keyed/SoftWarmBeds_keys.xml" />
+  </Folder>
 </Solution>

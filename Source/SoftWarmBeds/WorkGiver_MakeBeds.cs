@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using RimWorld;
 using Verse;
 using Verse.AI;
@@ -28,12 +29,10 @@ public class WorkGiver_MakeBeds : WorkGiver_Scanner
 
     public override IEnumerable<Thing> PotentialWorkThingsGlobal(Pawn pawn)
     {
-        foreach (var bed in pawn.Map.listerBuildings.AllBuildingsColonistOfClass<Building_Bed>())
+        foreach (var bed in pawn.Map.listerBuildings.AllBuildingsColonistOfClass<Building_Bed>()
+                     .Where(b => b.TryGetComp<CompMakeableBed>() != null))
         {
-            if (bed.TryGetComp<CompMakeableBed>() != null)
-            {
-                yield return bed;
-            }
+            yield return bed;
         }
     }
 }

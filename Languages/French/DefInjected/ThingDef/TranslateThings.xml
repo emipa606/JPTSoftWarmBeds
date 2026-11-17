@@ -1,14 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-  <Beddings.label>Draps</Beddings.label>
-  <Rede.label>Hamac</Rede.label>
-  <Rede.description>Le lit le plus simple et le plus pratique jamais conçu, composé uniquement de corde et de tissu ou de cuir. Vous pouvez l'accrocher n'importe où et même l'emporter avec vous pour faire une sieste lors de vos déplacements. Suspendu dans les airs, il garde l'occupant au frais et est parfait pour un climat tropical. Cependant, ce n'est pas aussi confortable qu'un lit réel.</Rede.description>
-  <SingleBedding.label>Draps pour lit simple</SingleBedding.label>
-  <SingleBedding.description>Ensemble de couvre-lit, couverture, drap et oreiller pour un lit simple. Il offre confort et isolation thermique pour ceux qui occupent le lit.</SingleBedding.description>
-  <DoubleBedding.label>Draps pour lit double</DoubleBedding.label>
-  <DoubleBedding.description>Ensemble de couvre-lit, couverture, drap et oreiller pour un lit double. Il offre confort et isolation thermique pour ceux qui occupent le lit</DoubleBedding.description>
-  <SingleTribalBedding.label>simple couverture de fourrure</SingleTribalBedding.label>
-  <SingleTribalBedding.description>Un tas de fourrures à utiliser comme couvertures, avec un oreiller rudimentaire. Pas très confortable, mais certainement mieux que de ne rien utiliser. Il offre une isolation thermique pour l'occupant du lit.</SingleTribalBedding.description>
-  <DoubleTribalBedding.label>grandes couvertures de fourrure</DoubleTribalBedding.label>
-  <DoubleTribalBedding.description>Un grand tas de fourrures à utiliser comme couvertures, avec un oreiller rudimentaire. Pas très confortable, mais certainement mieux que de ne rien utiliser. Il offre une isolation thermique pour l'occupant du lit.</DoubleTribalBedding.description>
 </LanguageData>

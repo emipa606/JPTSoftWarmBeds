@@ -1,12 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <!-- Core Module -->
-  <SpacerBedBlanket.label>sábana individual ergonómica</SpacerBedBlanket.label>
-  <SpacerBedBlanket.description>Te mantiene caliente.</SpacerBedBlanket.description>
-  <SpacerDoubleBedBlanket.label>sábana doble ergonómica</SpacerDoubleBedBlanket.label>
-  <KingsizeBedBlanket.label>Sábana doble kingsize.</KingsizeBedBlanket.label>
   <!-- Spacer Module -->
-  <AdvBedBlanket.label>sábana individual avanzada</AdvBedBlanket.label>
-  <AdvBedBlanket.description>te mantiene caliente.</AdvBedBlanket.description>
-  <AdvDoubleBedBlanket.label>sábana doble avanzada</AdvDoubleBedBlanket.label>
 </LanguageData>

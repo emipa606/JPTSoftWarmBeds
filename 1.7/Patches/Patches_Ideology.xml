@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!--Ideology-->
+  <Operation Class="JPTools.PatchOperationFindModById">
+    <mods>
+      <li>ludeon.rimworld.ideology</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <success>Always</success>
+      <operations>
+        <!--Function Extension-->
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName = "AncientBed"]</xpath>
+          <value>
+            <inspectorTabs>
+              <li>SoftWarmBeds.ITab_Bedding</li>
+            </inspectorTabs>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName = "AncientBed"]/building</xpath>
+          <value>
+            <fixedStorageSettings>
+              <filter>
+                <categories>
+                  <li>Textiles</li>
+                </categories>
+              </filter>
+            </fixedStorageSettings>
+            <defaultStorageSettings>
+              <filter>
+                <categories>
+                  <li>Textiles</li>
+                </categories>
+              </filter>
+            </defaultStorageSettings>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName = "AncientBed"]</xpath>
+          <value>
+            <tickerType>Normal</tickerType>
+          </value>
+        </li>
+        <!--Beddings Settings-->
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName = "AncientBed"]/comps</xpath>
+          <value>
+            <li Class="SoftWarmBeds.CompProperties_MakeableBed">
+              <beddingDef>SingleBedding</beddingDef>
+            </li>
+          </value>
+        </li>
+        <!--BedRestEffectiveness Settings-->
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName = "AncientBed"]/statBases/BedRestEffectiveness</xpath>
+          <value>
+            <BedRestEffectiveness>0.35</BedRestEffectiveness>
+          </value>
+        </li>
+        <!--Comfort Settings-->
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName = "AncientBed"]/statBases/Comfort</xpath>
+          <value>
+            <Comfort>0.25</Comfort>
+          </value>
+        </li>
+        <!--Insulation Settings-->
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName = "AncientBed"]/statBases</xpath>
+          <value>
+            <BedStuffEffectMultiplierInsulation_Cold>0.35</BedStuffEffectMultiplierInsulation_Cold>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>

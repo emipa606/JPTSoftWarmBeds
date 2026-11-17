@@ -6,7 +6,7 @@ namespace SoftWarmBeds;
 
 //Makes the bed stats cover for a possible lack of apparel when calculating comfortable temperature range for pawns in bed
 [HarmonyPatch(typeof(GenTemperature), nameof(GenTemperature.ComfortableTemperatureRange), typeof(Pawn))]
-public class GenTemperature_ComfortableTemperatureRange
+public static class GenTemperature_ComfortableTemperatureRange
 {
     public static void Postfix(Pawn p, ref FloatRange __result)
     {
@@ -37,7 +37,5 @@ public class GenTemperature_ComfortableTemperatureRange
         {
             __result.max = altResult.max;
         }
-        //Log.Message(bed+" insulation cold is "+bed.GetStatValue(BedInsulationCold.Bed_Insulation_Cold, true));
-        //Log.Message("comfortable range modified for " + p + " by bed" + bed + ": " + __result.ToString());
     }
 }

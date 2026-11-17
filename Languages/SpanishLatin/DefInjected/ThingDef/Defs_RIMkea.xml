@@ -1,9 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-  <SNOREGGSingleBlanket.label>sábana individual RIMkea</SNOREGGSingleBlanket.label>
-  <SNOREGGSingleBlanket.description>Te mantiene caliente.</SNOREGGSingleBlanket.description>
-  <SNOREGGDoubleBlanket.label>sábana doble RIMkea</SNOREGGDoubleBlanket.label>
-  <KRUDNEPPSingleBlanket.label>sábana individual RIMkea</KRUDNEPPSingleBlanket.label>
-  <KRUDNEPPSingleBlanket.description>Te mantiene caliente.</KRUDNEPPSingleBlanket.description>
-  <SLABNEPPDoubleBlanket.label>sábana doble RIMkea</SLABNEPPDoubleBlanket.label>
 </LanguageData>

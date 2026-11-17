@@ -39,27 +39,24 @@ public static class Hospitality_Patch
         }
 
         bedComp.NotTheBlanket = false;
-        swap(__instance, bed, bedComp.settings, bedComp);
+        swap(__instance, bed, bedComp);
         return false;
     }
 
-    private static void swap(object __instance, Building_Bed bed, StorageSettings settings,
+    private static void swap(object __instance, Building_Bed bed,
         CompMakeableBed compMakeable)
     {
         //reflection info
         var guestBed = AccessTools.TypeByName("Hospitality.Building_GuestBed");
         var makeBedInfo = AccessTools.Method(guestBed, "MakeBed", [typeof(Building_Bed), typeof(string)]);
-        //
+
         var newName = bed.GetType() == guestBed
             ? bed.def.defName.Split(["Guest"], StringSplitOptions.RemoveEmptyEntries)[0]
             : $"{bed.def.defName}Guest";
 
-        //var compArt = bed.TryGetComp<CompArt>();
-        //var art = compArt?.Active != null && compArt.taleRef != null ? new { authorName = compArt.authorNameInt, title = compArt.titleInt, taleRef = new TaleReference { tale = compArt.taleRef.tale, seed = compArt.taleRef.seed } } : null;
-        //compArt?.taleRef?.tale?.Notify_NewlyUsed();
         // Thanks again to @Zamu for figuring out it was actually very simple!
         var newBed = (Building_Bed)makeBedInfo.Invoke(__instance, [bed, newName]);
-        newBed.SetFactionDirect(bed.Faction);
+        newBed?.SetFactionDirect(bed.Faction);
         var spawnedBed = (Building_Bed)GenSpawn.Spawn(newBed, bed.Position, bed.Map, bed.Rotation);
         spawnedBed.HitPoints = bed.HitPoints;
         spawnedBed.ForPrisoners = bed.ForPrisoners;

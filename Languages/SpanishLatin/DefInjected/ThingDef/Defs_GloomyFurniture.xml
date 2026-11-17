@@ -1,10 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-  <RGK_SingleBlanket.label>sábana para uno</RGK_SingleBlanket.label>
-  <RGK_SingleBlanket.description>Te mantiene caliente.</RGK_SingleBlanket.description>
-  <RGK_SingleBlanketB.label>sábana para uno</RGK_SingleBlanketB.label>
-  <RGK_SingleBlanketB.description>Te mantiene caliente.</RGK_SingleBlanketB.description>
-  <RGK_DoubleBlanket.label>sábanas para dos</RGK_DoubleBlanket.label>
-  <RGK_DoubleBlanketB.label>sábanas para dos</RGK_DoubleBlanketB.label>
-  <GL_ClassyDoubleBlanket.label>Elegantes sábanas que te mantienen caliente.</GL_ClassyDoubleBlanket.label>
 </LanguageData>

@@ -1,15 +1,16 @@
 # [[JPT] Soft Warm Beds (Continued)](https://steamcommunity.com/sharedfiles/filedetails/?id=3006469889)
 
-![Image](https://i.imgur.com/buuPQel.png)
+![Image](https://img.litet.net/logos/Info.png)
 
 Update of jptrrss mod https://steamcommunity.com/sharedfiles/filedetails/?id=1713295858
 
 - Removed HugsLib dependency
 - cyanobot made a [mod](https://steamcommunity.com/sharedfiles/filedetails/?id=3211326812) to enable patching of the softness
+- Added support for [Loft Beds](https://steamcommunity.com/sharedfiles/filedetails/?id=3531523881) thanks to PathogenXD
 
-![Image](https://i.imgur.com/pufA0kM.png)
+![Image](https://img.litet.net/logos/Notice.png)
 	
-![Image](https://i.imgur.com/Z4GOv8H.png)
+![Image](https://img.litet.net/logos/OriginalDescription.png)
 
 Have you ever wondered why is it that we just need stone blocks or steel to build a bed, while wool and furs pile up in the warehouse, unused? Do you get a feeling it would be way more comfortable to lay down on something soft? And what if that cozy bed could also help with the freezing cold? Well, that's what this mod is all about!
 
@@ -70,13 +71,13 @@ EN, ES, FR, IT, PT, PT-BR, RU, ZH
 This mod was clearly based on gadjung's [RealBeds](steamcommunity.com/sharedfiles/filedetails/?id=1416581883). Many thanks for his coolness in letting me use some of his code on the first version! Also, it wouldn't be possible without the invaluable help of Nuka Frog, Mehni, Zamu and the folks at the RimWorld Discord channel.
 Textures for Gloomy Furniture and Gloomy Vanilla compatibility were created by Drawer based on the originals by Gloomylynx, with his authorization. RIMkea and Vanilla Furniture Expanded compatibility by the great Dr. Zhivago, with textures by Oskar Potocki. VFE - Vikings compatibility by Oken and jupiterLILY. Textures for 
 
-![Image](https://i.imgur.com/PwoNOj4.png)
+![Image](https://img.litet.net/logos/ReportingIssues.png)
 
 
 
 -  See if the the error persists if you just have this mod and its requirements active.
 -  If not, try adding your other mods until it happens again.
--  Post your error-log using the [Log Uploader](https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404) or the standalone [Uploader](https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404) and command Ctrl+F12
+-  Always post your log using the [Log Uploader](https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404)
 -  For best support, please use the Discord-channel for error-reporting.
 -  Do not report errors by making a discussion-thread, I get no notification of that.
 -  If you have the solution for a problem, please post it to the GitHub repository.
@@ -84,4 +85,4 @@ Textures for Gloomy Furniture and Gloomy Vanilla compatibility were created by D
 
  
 
-[![Image](https://img.shields.io/github/v/release/emipa606/JPTSoftWarmBeds?label=latest%20version&style=plastic&color=9f1111&labelColor=black)](https://steamcommunity.com/sharedfiles/filedetails/changelog/3006469889) | tags:  blankets,  softness
+[![Image](https://img.shields.io/github/v/release/emipa606/JPTSoftWarmBeds?label=latest%20version&style=plastic&color=9f1111&labelColor=black)](https://steamcommunity.com/sharedfiles/filedetails/changelog/3006469889) | blankets, softness

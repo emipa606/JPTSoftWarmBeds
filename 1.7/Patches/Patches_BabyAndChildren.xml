@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!--Baby And Children Crib-->
+  <Operation Class="JPTools.PatchOperationFindModById">
+    <mods>
+      <li>thiritevhcompilationhnyaamz899.babyhandhchildren</li>
+      <li>children.and.pregnancy</li>
+      <li>babies.and.children.continued</li>
+      <li>babies.and.children.continued.13</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <success>Always</success>
+      <operations>
+        <!--Extra Defs-->
+        <li Class="PatchOperationAdd">
+          <xpath>Defs</xpath>
+          <value>
+            <ThingDef ParentName="BlanketBase">
+              <defName>CribBlanket</defName>
+              <label>Crib blanket</label>
+              <description>Keeps you warm</description>
+              <graphicData>
+                <texPath>Things/Building/Baby+Children/CribBlanket</texPath>
+                <graphicClass>Graphic_Multi</graphicClass>
+                <shaderType>CutoutComplex</shaderType>
+                <drawSize>(2,2)</drawSize>
+                <damageData>
+                  <rect>(0,0.05,1,1)</rect>
+                </damageData>
+              </graphicData>
+              <size>(1,1)</size>
+            </ThingDef>
+          </value>
+        </li>
+        <!--Function Extension-->
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName = "Crib"]</xpath>
+          <value>
+            <inspectorTabs>
+              <li>SoftWarmBeds.ITab_Bedding</li>
+            </inspectorTabs>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName = "Crib"]/building</xpath>
+          <value>
+            <fixedStorageSettings>
+              <filter>
+                <categories>
+                  <li>Textiles</li>
+                </categories>
+              </filter>
+            </fixedStorageSettings>
+            <defaultStorageSettings>
+              <filter>
+                <categories>
+                  <li>Textiles</li>
+                </categories>
+              </filter>
+            </defaultStorageSettings>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName = "Crib"]</xpath>
+          <value>
+            <tickerType>Normal</tickerType>
+          </value>
+        </li>
+        <!--Peserving Menu Icon-->
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName = "Crib"]</xpath>
+          <value>
+            <uiIconPath />
+          </value>
+        </li>
+        <li Class="PatchOperationSequence">
+          <success>Always</success>
+          <operations>
+            <li Class="PatchOperationReplace">
+              <xpath>/Defs/ThingDef[defName = "Crib"]/uiIconScale</xpath>
+              <value>
+                <uiIconScale>1.66</uiIconScale>
+              </value>
+            </li>
+            <li Class="PatchOperationTest">
+              <xpath>/Defs/ThingDef[defName = "Crib"]/uiIconScale</xpath>
+              <success>Invert</success>
+            </li>
+            <li Class="PatchOperationAdd">
+              <xpath>/Defs/ThingDef[defName = "Crib"]</xpath>
+              <value>
+                <uiIconScale>1.66</uiIconScale>
+              </value>
+            </li>
+          </operations>
+        </li>
+        <li Class="JPTools.PatchOperationCopy">
+          <xpath>/Defs/ThingDef[defName = "Crib"]/graphicData/texPath</xpath>
+          <toXpath>/Defs/ThingDef[defName = "Crib"]/uiIconPath</toXpath>
+          <append>_south</append>
+        </li>
+        <!--Graphic Modifications Place Holder-->
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="Crib"]/graphicData/texPath</xpath>
+          <value>
+            <texPath>Things/Building/Baby+Children/Crib</texPath>
+          </value>
+        </li>
+        <!--Beddings Settings-->
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName = "Crib"]/comps</xpath>
+          <value>
+            <li Class="SoftWarmBeds.CompProperties_MakeableBed">
+              <blanketDef>CribBlanket</blanketDef>
+              <beddingDef>SingleBedding</beddingDef>
+            </li>
+          </value>
+        </li>
+        <!--BedRestEffectiveness Settings-->
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName = "Crib"]/statBases/BedRestEffectiveness</xpath>
+          <value>
+            <BedRestEffectiveness>0.7</BedRestEffectiveness>
+          </value>
+        </li>
+        <!--Comfort Settings-->
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName = "Crib"]/statBases/Comfort</xpath>
+          <value>
+            <Comfort>0.3</Comfort>
+          </value>
+        </li>
+        <!--Insulation Settings-->
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName = "Crib"]/statBases</xpath>
+          <value>
+            <BedStuffEffectMultiplierInsulation_Cold>0.5</BedStuffEffectMultiplierInsulation_Cold>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>

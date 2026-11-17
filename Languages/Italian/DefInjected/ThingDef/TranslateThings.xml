@@ -1,14 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-  <Beddings.label>Lenzuola</Beddings.label>
-  <Rede.label>Amaca</Rede.label>
-  <Rede.description>Il letto più semplice e pratico di sempre, fatto solo di corda e un po' de tessuto o pelle. Si può appendere in qualsiasi luogo e perfino portarla con sé per schiacciare un pisolino mentre si è in viaggio. Sospesa a mezz'aria, mantiene fresco chi la occupa e ciò è perfetto per un clima tropicale. Tuttavia, non è tanto comoda quanto un letto vero e proprio.</Rede.description>
-  <SingleBedding.label>Lenzuola per letto singolo</SingleBedding.label>
-  <SingleBedding.description>Insieme di copriletto, coperta, lenzuolo e cuscino per un letto singolo. Offre comodità e isolamento termico per chi occupa il letto.</SingleBedding.description>
-  <DoubleBedding.label>Lenzuola per letto matrimoniale</DoubleBedding.label>
-  <DoubleBedding.description>Insieme di copriletto, coperta, lenzuolo e cuscini per un letto matrimoniale. Offre comodità e isolamento termico per chi occupa il letto.</DoubleBedding.description>
-  <SingleTribalBedding.label>coperte di pelliccia</SingleTribalBedding.label>
-  <SingleTribalBedding.description>Un mucchio di pellicce da usare come coperte, con un cuscino rudimentale. Non molto comodo, ma decisamente meglio che non usare niente. Offre isolamento termico per chi occupa il letto.</SingleTribalBedding.description>
-  <DoubleTribalBedding.label>ampie coperte di pelliccia</DoubleTribalBedding.label>
-  <DoubleTribalBedding.description>Un grande mucchio di pellicce da usare come coperte, con due cuscini improvvisati. Non molto comodo, ma decisamente meglio che non usare niente. Offre isolamento termico per chi occupa il letto.</DoubleTribalBedding.description>
 </LanguageData>

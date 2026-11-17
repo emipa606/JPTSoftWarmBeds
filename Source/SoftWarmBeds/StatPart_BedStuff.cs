@@ -60,7 +60,7 @@ public class StatPart_BedStuff : StatPart
         return stringBuilder.ToString().TrimEndNewlines();
     }
 
-    public override void TransformValue(StatRequest req, ref float value)
+    public override void TransformValue(StatRequest req, ref float val)
     {
         if (!req.HasThing || req.Thing is not Building_Bed)
         {
@@ -73,16 +73,15 @@ public class StatPart_BedStuff : StatPart
         {
             if (additiveStat != null)
             {
-                value += factor * addend;
-                goto Done;
+                val += factor * addend;
             }
-
-            value *= factor;
-            goto Done;
+            else
+            {
+                val *= factor;
+            }
         }
 
-        value += addend;
-        Done:
+        val += addend;
         Factor = factor;
         Addend = addend;
     }

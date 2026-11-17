@@ -1,11 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-  <BedStuffEffectMultiplierInsulation_Cold.label>moltiplicatore d'effetto del materiale isolante per il freddo.</BedStuffEffectMultiplierInsulation_Cold.label>
-  <BedStuffEffectMultiplierInsulation_Heat.label>moltiplicatore d'effetto del materiale isolante per il caldo.</BedStuffEffectMultiplierInsulation_Heat.label>
-  <Bed_Insulation_Cold.label>Isolamento - Freddo</Bed_Insulation_Cold.label>
-  <Bed_Insulation_Cold.description>Miglioramento della temperatura confortevole minima di chi occupa questo letto. Valori maggiori permettono di sopravvivere a temperature più fredde.</Bed_Insulation_Cold.description>
-  <Bed_Insulation_Heat.label>Isolamento - Caldo</Bed_Insulation_Heat.label>
-  <Bed_Insulation_Heat.description>Miglioramento della temperatura confortevole massima di chi occupa questo letto. Valori maggiori permettono di sopravvivere a temperature più calde.</Bed_Insulation_Heat.description>
-  <Textile_Softness.label>Morbidezza</Textile_Softness.label>
-  <Textile_Softness.description>Determina il livello di conforto di un oggetto fatto di questo materiale. Quando usato per le lenzuola, influisce sul livello di riposo offerto dal letto.</Textile_Softness.description>
 </LanguageData>

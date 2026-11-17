@@ -7,16 +7,11 @@ namespace SoftWarmBeds;
 
 //Adjusts the info report on comfortable temperatures - explanation part
 [HarmonyPatch(typeof(StatPart_GearStatOffset), nameof(StatPart_GearStatOffset.ExplanationPart))]
-public class StatPart_GearStatOffset_ExplanationPart
+public static class StatPart_GearStatOffset_ExplanationPart
 {
     public static string Postfix(string original, StatRequest req, StatDef ___apparelStat)
     {
-        if (!req.HasThing || req.Thing == null)
-        {
-            return original;
-        }
-
-        if (req.Thing is not Pawn pawn || !pawn.InBed())
+        if (!req.HasThing || req.Thing is not Pawn pawn || !pawn.InBed())
         {
             return original;
         }

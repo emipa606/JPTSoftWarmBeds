@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!--GloomyFurniture-->
+  <Operation Class="JPTools.PatchOperationFindModById">
+    <mods>
+      <li>Solaris.FurnitureBase</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <success>Always</success>
+      <operations>
+        <!--Extra Defs-->
+        <li Class="PatchOperationAdd">
+          <xpath>Defs</xpath>
+          <value>
+            <ThingDef ParentName="BlanketBase">
+              <defName>RGK_SingleBlanket</defName>
+              <label>gloomy single blanket</label>
+              <description>Keeps you warm</description>
+              <graphicData>
+                <texPath>Things/Building/GloomyFurniture/RGK_SingleBlanket</texPath>
+                <graphicClass>Graphic_Multi</graphicClass>
+                <shaderType>CutoutComplex</shaderType>
+                <drawSize>(3,4)</drawSize>
+                <damageData>
+                  <rect>(0,0.05,1,1.95)</rect>
+                </damageData>
+              </graphicData>
+              <size>(1,2)</size>
+            </ThingDef>
+            <ThingDef ParentName="BlanketBase">
+              <defName>RGK_SingleBlanketB</defName>
+              <label>gloomy single blanket</label>
+              <description>Keeps you warm</description>
+              <graphicData>
+                <texPath>Things/Building/GloomyFurniture/RGK_SingleBlanket2</texPath>
+                <graphicClass>Graphic_Multi</graphicClass>
+                <shaderType>CutoutComplex</shaderType>
+                <drawSize>(3,4)</drawSize>
+                <damageData>
+                  <rect>(0,0.05,1,1.95)</rect>
+                </damageData>
+              </graphicData>
+              <size>(1,2)</size>
+            </ThingDef>
+            <ThingDef ParentName="BlanketBase">
+              <defName>RGK_DoubleBlanket</defName>
+              <label>gloomy double blanket</label>
+              <graphicData>
+                <texPath>Things/Building/GloomyFurniture/RGK_DoubleBlanket</texPath>
+                <graphicClass>Graphic_Multi</graphicClass>
+                <shaderType>CutoutComplex</shaderType>
+                <drawSize>(4.05,4.05)</drawSize>
+                <damageData>
+                  <rect>(0,0.05,1,1.95)</rect>
+                </damageData>
+              </graphicData>
+              <size>(2,2)</size>
+            </ThingDef>
+            <ThingDef ParentName="BlanketBase">
+              <defName>RGK_DoubleBlanketB</defName>
+              <label>gloomy double blanket</label>
+              <graphicData>
+                <texPath>Things/Building/GloomyFurniture/RGK_DoubleBlanket2</texPath>
+                <graphicClass>Graphic_Multi</graphicClass>
+                <shaderType>CutoutComplex</shaderType>
+                <drawSize>(4.05,4.05)</drawSize>
+                <damageData>
+                  <rect>(0,0.05,1,1.95)</rect>
+                </damageData>
+              </graphicData>
+              <size>(2,2)</size>
+            </ThingDef>
+            <ThingDef ParentName="BlanketBase">
+              <defName>GL_ClassyDoubleBlanket</defName>
+              <label>gloomy classy blanket</label>
+              <graphicData>
+                <texPath>Things/Building/GloomyFurniture/GL_ClassyDoubleBlanket</texPath>
+                <graphicClass>Graphic_Multi</graphicClass>
+                <shaderType>CutoutComplex</shaderType>
+                <drawSize>(4,4)</drawSize>
+                <damageData>
+                  <rect>(0,0.05,1,1.95)</rect>
+                </damageData>
+              </graphicData>
+              <size>(2,2)</size>
+            </ThingDef>
+          </value>
+        </li>
+        <!--Function Extension-->
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName = "RGK_bedSingle" or defName = "RGK_bedSingleB" or defName = "RGK_bedDouble" or defName = "RGK_bedDoubleB" or defName = "GL_ClassyDoubleBed"]</xpath>
+          <value>
+            <inspectorTabs>
+              <li>SoftWarmBeds.ITab_Bedding</li>
+            </inspectorTabs>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName = "RGK_bedSingle" or defName = "RGK_bedSingleB" or defName = "RGK_bedDouble" or defName = "RGK_bedDoubleB" or defName = "GL_ClassyDoubleBed"]/building</xpath>
+          <value>
+            <fixedStorageSettings>
+              <filter>
+                <categories>
+                  <li>Textiles</li>
+                </categories>
+              </filter>
+            </fixedStorageSettings>
+            <defaultStorageSettings>
+              <filter>
+                <categories>
+                  <li>Textiles</li>
+                </categories>
+              </filter>
+            </defaultStorageSettings>
+          </value>
+        </li>
+        <!--Peserving Menu Icon-->
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName = "RGK_bedSingle" or defName = "RGK_bedSingleB" or defName = "RGK_bedDouble" or defName = "RGK_bedDoubleB" or defName = "GL_ClassyDoubleBed"]</xpath>
+          <value>
+            <uiIconPath />
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName = "RGK_bedSingle" or defName = "RGK_bedSingleB" or defName = "RGK_bedDouble" or defName = "RGK_bedDoubleB" or defName = "GL_ClassyDoubleBed"]/uiIconScale</xpath>
+          <value>
+            <uiIconScale>1.66</uiIconScale>
+          </value>
+        </li>
+        <li Class="JPTools.PatchOperationCopy">
+          <xpath>/Defs/ThingDef[defName = "RGK_bedSingle"]/graphicData/texPath</xpath>
+          <toXpath>/Defs/ThingDef[defName = "RGK_bedSingle"]/uiIconPath</toXpath>
+          <append>_south</append>
+        </li>
+        <li Class="JPTools.PatchOperationCopy">
+          <xpath>/Defs/ThingDef[defName = "RGK_bedSingleB"]/graphicData/texPath</xpath>
+          <toXpath>/Defs/ThingDef[defName = "RGK_bedSingleB"]/uiIconPath</toXpath>
+          <append>_south</append>
+        </li>
+        <li Class="JPTools.PatchOperationCopy">
+          <xpath>/Defs/ThingDef[defName = "RGK_bedDouble"]/graphicData/texPath</xpath>
+          <toXpath>/Defs/ThingDef[defName = "RGK_bedDouble"]/uiIconPath</toXpath>
+          <append>_south</append>
+        </li>
+        <li Class="JPTools.PatchOperationCopy">
+          <xpath>/Defs/ThingDef[defName = "RGK_bedDoubleB"]/graphicData/texPath</xpath>
+          <toXpath>/Defs/ThingDef[defName = "RGK_bedDoubleB"]/uiIconPath</toXpath>
+          <append>_south</append>
+        </li>
+        <li Class="JPTools.PatchOperationCopy">
+          <xpath>/Defs/ThingDef[defName = "GL_ClassyDoubleBed"]/graphicData/texPath</xpath>
+          <toXpath>/Defs/ThingDef[defName = "GL_ClassyDoubleBed"]/uiIconPath</toXpath>
+          <append>_south</append>
+        </li>
+        <!--Graphic Modifications-->
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName = "RGK_bedSingle"]/graphicData/texPath</xpath>
+          <value>
+            <texPath>Things/Building/GloomyFurniture/RGK_bedSingle</texPath>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName = "RGK_bedSingleB"]/graphicData/texPath</xpath>
+          <value>
+            <texPath>Things/Building/GloomyFurniture/RGK_bedSingle2</texPath>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName = "RGK_bedDouble"]/graphicData/texPath</xpath>
+          <value>
+            <texPath>Things/Building/GloomyFurniture/RGK_bedDouble</texPath>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName = "RGK_bedDoubleB"]/graphicData/texPath</xpath>
+          <value>
+            <texPath>Things/Building/GloomyFurniture/RGK_bedDouble2</texPath>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName = "HospitalBed"]/graphicData/texPath</xpath>
+          <value>
+            <texPath>Things/Building/HospitalBed</texPath>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName = "GL_ClassyDoubleBed"]/graphicData/texPath</xpath>
+          <value>
+            <texPath>Things/Building/GloomyFurniture/GL_ClassyDoubleBed</texPath>
+          </value>
+        </li>
+        <!--Beddings Settings-->
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName = "RGK_bedSingle"]/comps</xpath>
+          <value>
+            <li Class="SoftWarmBeds.CompProperties_MakeableBed">
+              <blanketDef>RGK_SingleBlanket</blanketDef>
+              <beddingDef>SingleBedding</beddingDef>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName = "RGK_bedSingleB"]/comps</xpath>
+          <value>
+            <li Class="SoftWarmBeds.CompProperties_MakeableBed">
+              <blanketDef>RGK_SingleBlanketB</blanketDef>
+              <beddingDef>SingleBedding</beddingDef>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName = "RGK_bedDouble"]/comps</xpath>
+          <value>
+            <li Class="SoftWarmBeds.CompProperties_MakeableBed">
+              <blanketDef>RGK_DoubleBlanket</blanketDef>
+              <beddingDef>DoubleBedding</beddingDef>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName = "RGK_bedDoubleB"]/comps</xpath>
+          <value>
+            <li Class="SoftWarmBeds.CompProperties_MakeableBed">
+              <blanketDef>RGK_DoubleBlanketB</blanketDef>
+              <beddingDef>DoubleBedding</beddingDef>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName = "GL_ClassyDoubleBed"]/comps</xpath>
+          <value>
+            <li Class="SoftWarmBeds.CompProperties_MakeableBed">
+              <blanketDef>GL_ClassyDoubleBlanket</blanketDef>
+              <beddingDef>DoubleBedding</beddingDef>
+            </li>
+          </value>
+        </li>
+        <!--BedRestEffectiveness Settings-->
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName = "RGK_bedSingle" or defName = "RGK_bedSingleB" or defName = "RGK_bedDouble" or defName = "RGK_bedDoubleB"]/statBases/BedRestEffectiveness</xpath>
+          <value>
+            <BedRestEffectiveness>0.5</BedRestEffectiveness>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName = "GL_ClassyDoubleBed"]/statBases/BedRestEffectiveness</xpath>
+          <value>
+            <BedRestEffectiveness>0.6</BedRestEffectiveness>
+          </value>
+        </li>
+        <!--Comfort Settings-->
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName = "RGK_bedSingle" or defName = "RGK_bedSingleB"]/statBases/Comfort</xpath>
+          <value>
+            <Comfort>0.3</Comfort>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName = "RGK_bedDouble" or defName = "RGK_bedDoubleB"]/statBases/Comfort</xpath>
+          <value>
+            <Comfort>0.25</Comfort>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName = "GL_ClassyDoubleBed"]/statBases/Comfort</xpath>
+          <value>
+            <Comfort>0.4</Comfort>
+          </value>
+        </li>
+        <!--Insulation Settings-->
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName = "RGK_bedSingle" or defName = "RGK_bedSingleB" or defName = "RGK_bedDouble" or defName = "RGK_bedDoubleB"]/statBases</xpath>
+          <value>
+            <BedStuffEffectMultiplierInsulation_Cold>0.35</BedStuffEffectMultiplierInsulation_Cold>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName = "GL_ClassyDoubleBed"]/statBases</xpath>
+          <value>
+            <BedStuffEffectMultiplierInsulation_Cold>0.5</BedStuffEffectMultiplierInsulation_Cold>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>

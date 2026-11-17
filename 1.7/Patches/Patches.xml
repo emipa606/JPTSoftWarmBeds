@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!--to Stats_Building_Special-->
+  <Operation Class="PatchOperationSequence">
+    <success>Always</success>
+    <operations>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/StatDef[defName = "BedRestEffectiveness"]/parts</xpath>
+        <value>
+          <li Class="SoftWarmBeds.StatPart_BedStuff">
+            <priority>100</priority>
+            <additiveStat>Textile_Softness</additiveStat>
+          </li>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/StatDef[defName = "BedRestEffectiveness"]/minValue</xpath>
+        <value>
+          <minValue>0.3</minValue>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+  <!--to Stat_Basics_General-->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/StatDef[defName = "Comfort"]/parts</xpath>
+    <value>
+      <li Class="SoftWarmBeds.StatPart_BedStuff">
+        <priority>100</priority>
+        <additiveStat>Textile_Softness</additiveStat>
+      </li>
+    </value>
+  </Operation>
+  <!--to Buildings_Furniture-->
+  <Operation Class="PatchOperationSequence">
+    <success>Always</success>
+    <operations>
+      <!--Function Extension-->
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName = "Bed" or defName = "DoubleBed" or defName = "HospitalBed" or defName = "RoyalBed"]</xpath>
+        <value>
+          <inspectorTabs>
+            <li>SoftWarmBeds.ITab_Bedding</li>
+          </inspectorTabs>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName = "Bed" or defName = "DoubleBed" or defName = "HospitalBed" or defName = "RoyalBed"]/building</xpath>
+        <value>
+          <fixedStorageSettings>
+            <filter>
+              <categories>
+                <li>Textiles</li>
+              </categories>
+            </filter>
+          </fixedStorageSettings>
+          <defaultStorageSettings>
+            <filter>
+              <categories>
+                <li>Textiles</li>
+              </categories>
+            </filter>
+          </defaultStorageSettings>
+        </value>
+      </li>
+      <!--Peserving Menu Icon-->
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName = "Bed" or defName = "DoubleBed" or defName = "HospitalBed" or defName = "RoyalBed"]</xpath>
+        <value>
+          <uiIconPath />
+        </value>
+      </li>
+      <li Class="JPTools.PatchOperationCopy">
+        <xpath>/Defs/ThingDef[defName = "Bed"]/graphicData/texPath</xpath>
+        <toXpath>/Defs/ThingDef[defName = "Bed"]/uiIconPath</toXpath>
+        <append>_south</append>
+      </li>
+      <li Class="JPTools.PatchOperationCopy">
+        <xpath>/Defs/ThingDef[defName = "DoubleBed"]/graphicData/texPath</xpath>
+        <toXpath>/Defs/ThingDef[defName = "DoubleBed"]/uiIconPath</toXpath>
+        <append>_south</append>
+      </li>
+      <li Class="JPTools.PatchOperationCopy">
+        <xpath>/Defs/ThingDef[defName = "HospitalBed"]/graphicData/texPath</xpath>
+        <toXpath>/Defs/ThingDef[defName = "HospitalBed"]/uiIconPath</toXpath>
+        <append>_south</append>
+      </li>
+      <li Class="JPTools.PatchOperationCopy">
+        <xpath>/Defs/ThingDef[defName = "RoyalBed"]/graphicData/texPath</xpath>
+        <toXpath>/Defs/ThingDef[defName = "RoyalBed"]/uiIconPath</toXpath>
+        <append>_south</append>
+      </li>
+      <!--Graphic Modifications-->
+      <li Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName = "Bed"]/graphicData/texPath</xpath>
+        <value>
+          <texPath>Things/Building/Bed</texPath>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName = "DoubleBed"]/graphicData/texPath</xpath>
+        <value>
+          <texPath>Things/Building/DoubleBed</texPath>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName = "HospitalBed"]/graphicData/texPath</xpath>
+        <value>
+          <texPath>Things/Building/HospitalBed</texPath>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName = "RoyalBed"]/graphicData/texPath</xpath>
+        <value>
+          <texPath>Things/Building/RoyalBed</texPath>
+        </value>
+      </li>
+      <!--<li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName = "Bed"]/building</xpath>
+        <value>
+          <blueprintClass>Blueprint</blueprintClass>
+          <blueprintGraphicData>
+            <texPath>Things/Building/Bed_Blueprint</texPath>
+          </blueprintGraphicData>
+        </value>
+      </li>-->
+      <li Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName = "Bed"]/description</xpath>
+        <value>
+          <description>A bed for resting, but just its frame. Needs a mattress and sheets to be complete.</description>
+        </value>
+      </li>
+      <!--Beddings Settings-->
+      <li Class="PatchOperationConditional">
+        <xpath>/Defs/ThingDef[defName = "Bed"]/comps</xpath>
+        <success>Always</success>
+        <match Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName = "Bed"]/comps</xpath>
+          <value>
+            <li Class="SoftWarmBeds.CompProperties_MakeableBed">
+              <blanketDef>SingleBlanket</blanketDef>
+              <beddingDef>SingleBedding</beddingDef>
+            </li>
+          </value>
+        </match>
+        <nomatch Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName = "Bed"]</xpath>
+          <value>
+            <comps>
+              <li Class="SoftWarmBeds.CompProperties_MakeableBed">
+                <blanketDef>SingleBlanket</blanketDef>
+                <beddingDef>SingleBedding</beddingDef>
+              </li>
+            </comps>
+          </value>
+        </nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>/Defs/ThingDef[defName = "HospitalBed"]/comps</xpath>
+        <success>Always</success>
+        <match Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName = "HospitalBed"]/comps</xpath>
+          <value>
+            <li Class="SoftWarmBeds.CompProperties_MakeableBed">
+              <blanketDef>HospitalBlanket</blanketDef>
+              <beddingDef>SingleBedding</beddingDef>
+            </li>
+          </value>
+        </match>
+        <nomatch Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName = "HospitalBed"]</xpath>
+          <value>
+            <comps>
+              <li Class="SoftWarmBeds.CompProperties_MakeableBed">
+                <blanketDef>HospitalBlanket</blanketDef>
+                <beddingDef>SingleBedding</beddingDef>
+              </li>
+            </comps>
+          </value>
+        </nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>/Defs/ThingDef[defName = "DoubleBed"]/comps</xpath>
+        <success>Always</success>
+        <match Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName = "DoubleBed"]/comps</xpath>
+          <value>
+            <li Class="SoftWarmBeds.CompProperties_MakeableBed">
+              <blanketDef>DoubleBlanket</blanketDef>
+              <beddingDef>DoubleBedding</beddingDef>
+            </li>
+          </value>
+        </match>
+        <nomatch Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName = "DoubleBed"]</xpath>
+          <value>
+            <comps>
+              <li Class="SoftWarmBeds.CompProperties_MakeableBed">
+                <blanketDef>DoubleBlanket</blanketDef>
+                <beddingDef>DoubleBedding</beddingDef>
+              </li>
+            </comps>
+          </value>
+        </nomatch>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>/Defs/ThingDef[defName = "RoyalBed"]/comps</xpath>
+        <success>Always</success>
+        <match Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName = "RoyalBed"]/comps</xpath>
+          <value>
+            <li Class="SoftWarmBeds.CompProperties_MakeableBed">
+              <blanketDef>RoyalBlanket</blanketDef>
+              <beddingDef>DoubleBedding</beddingDef>
+            </li>
+          </value>
+        </match>
+        <nomatch Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName = "RoyalBed"]</xpath>
+          <value>
+            <comps>
+              <li Class="SoftWarmBeds.CompProperties_MakeableBed">
+                <blanketDef>RoyalBlanket</blanketDef>
+                <beddingDef>DoubleBedding</beddingDef>
+              </li>
+            </comps>
+          </value>
+        </nomatch>
+      </li>
+      <!--BedRestEffectiveness Settings-->
+      <li Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName = "Bed" or defName = "DoubleBed" or defName = "HospitalBed" or defName = "AnimalBed"]/statBases/BedRestEffectiveness</xpath>
+        <value>
+          <BedRestEffectiveness>0.5</BedRestEffectiveness>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName = "RoyalBed"]/statBases/BedRestEffectiveness</xpath>
+        <value>
+          <BedRestEffectiveness>0.55</BedRestEffectiveness>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName = "Bedroll" or defName = "BedrollDouble"]/statBases/BedRestEffectiveness</xpath>
+        <value>
+          <BedRestEffectiveness>0.45</BedRestEffectiveness>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[@Name="SleepingSpotBase"]/statBases</xpath>
+        <value>
+          <BedRestEffectiveness>0.3</BedRestEffectiveness>
+        </value>
+      </li>
+      <!--Comfort Settings-->
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName = "Bed" or defName = "DoubleBed"]/statBases</xpath>
+        <value>
+          <Comfort>0.25</Comfort>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName = "HospitalBed"]/statBases/Comfort</xpath>
+        <value>
+          <Comfort>0.3</Comfort>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName = "RoyalBed"]/statBases/Comfort</xpath>
+        <value>
+          <Comfort>0.4</Comfort>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName = "Bedroll" or defName = "BedrollDouble"]/statBases/Comfort</xpath>
+        <value>
+          <Comfort>0.18</Comfort>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[@Name="SleepingSpotBase"]/statBases/Comfort</xpath>
+        <value>
+          <Comfort>0</Comfort>
+        </value>
+      </li>
+      <!--Insulation Settings-->
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName = "Bedroll" or defName = "BedrollDouble" or defName = "AnimalBed"]/statBases</xpath>
+        <value>
+          <BedStuffEffectMultiplierInsulation_Cold>0.2</BedStuffEffectMultiplierInsulation_Cold>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName = "Bed" or defName = "DoubleBed" or defName= "HospitalBed"]/statBases</xpath>
+        <value>
+          <BedStuffEffectMultiplierInsulation_Cold>0.35</BedStuffEffectMultiplierInsulation_Cold>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName = "RoyalBed"]/statBases</xpath>
+        <value>
+          <BedStuffEffectMultiplierInsulation_Cold>0.5</BedStuffEffectMultiplierInsulation_Cold>
+        </value>
+      </li>
+      <!--End to Buildings_Furniture-->
+    </operations>
+  </Operation>
+</Patch>

@@ -1,9 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-  <SNOREGGSingleBlanket.label>Малое одеяло RIMkea</SNOREGGSingleBlanket.label>
-  <SNOREGGSingleBlanket.description>Поможет согреться одному человеку</SNOREGGSingleBlanket.description>
-  <SNOREGGDoubleBlanket.label>Большое одеяло RIMkea</SNOREGGDoubleBlanket.label>
-  <KRUDNEPPSingleBlanket.label>Малое одеяло RIMkea</KRUDNEPPSingleBlanket.label>
-  <KRUDNEPPSingleBlanket.description>Поможет согреться одному человеку</KRUDNEPPSingleBlanket.description>
-  <SLABNEPPDoubleBlanket.label>Большое одеяло RIMkea</SLABNEPPDoubleBlanket.label>
 </LanguageData>

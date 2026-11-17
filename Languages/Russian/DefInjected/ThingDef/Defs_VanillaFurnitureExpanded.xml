@@ -1,12 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <!-- Core Module -->
-  <SpacerBedBlanket.label>Малое эргономичное одеяло</SpacerBedBlanket.label>
-  <SpacerBedBlanket.description>Поможет согреться одному человеку</SpacerBedBlanket.description>
-  <SpacerDoubleBedBlanket.label>Большое эргономичное одеяло</SpacerDoubleBedBlanket.label>
-  <KingsizeBedBlanket.label>Эргономиченое одеяло большого размера</KingsizeBedBlanket.label>
   <!-- Spacer Module -->
-  <AdvBedBlanket.label>Современное малое одеяло</AdvBedBlanket.label>
-  <AdvBedBlanket.description>Поможет согреться одному человеку</AdvBedBlanket.description>
-  <AdvDoubleBedBlanket.label>Современное большое одеяло</AdvDoubleBedBlanket.label>
 </LanguageData>

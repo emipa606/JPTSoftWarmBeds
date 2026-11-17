@@ -1,10 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-  <RGK_SingleBlanket.label>Малое мрачное одеяло</RGK_SingleBlanket.label>
-  <RGK_SingleBlanket.description>Поможет согреться одному человеку</RGK_SingleBlanket.description>
-  <RGK_SingleBlanketB.label>Малое мрачное одеяло</RGK_SingleBlanketB.label>
-  <RGK_SingleBlanketB.description>Поможет согреться</RGK_SingleBlanketB.description>
-  <RGK_DoubleBlanket.label>Большое мрачное одеяло</RGK_DoubleBlanket.label>
-  <RGK_DoubleBlanketB.label>Большое мрачное одеяло</RGK_DoubleBlanketB.label>
-  <GL_ClassyDoubleBlanket.label>Стильное мрачное одеяло</GL_ClassyDoubleBlanket.label>
 </LanguageData>

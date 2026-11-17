@@ -7,7 +7,7 @@ namespace SoftWarmBeds;
 
 //Adjusts the info report on comfortable temperatures - InfoCard
 [HarmonyPatch(typeof(StatPart_GearStatOffset), nameof(StatPart_GearStatOffset.GetInfoCardHyperlinks))]
-public class StatPart_GearStatOffset_GetInfoCardHyperlinks
+public static class StatPart_GearStatOffset_GetInfoCardHyperlinks
 {
     public static IEnumerable<Dialog_InfoCard.Hyperlink> Postfix(IEnumerable<Dialog_InfoCard.Hyperlink> original,
         StatRequest req)

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!--Gloomy Vanilla-->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Gloomy Vanilla</li>
+      <li>Gloomy Vanilla Overhaul</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <success>Always</success>
+      <operations>
+        <!--Peserving Menu Icon-->
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName = "Bed" or defName = "DoubleBed" or defName = "RoyalBed"]/uiIconScale</xpath>
+          <value>
+            <uiIconScale>1.66</uiIconScale>
+          </value>
+        </li>
+        <!--Graphic Modifications-->
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="Bed"]/graphicData/texPath</xpath>
+          <value>
+            <texPath>Things/Building/GloomyFurniture/RGK_bedSingle</texPath>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="DoubleBed"]/graphicData/texPath</xpath>
+          <value>
+            <texPath>Things/Building/GloomyFurniture/RGK_bedDouble</texPath>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="RoyalBed"]/graphicData/texPath</xpath>
+          <value>
+            <texPath>Things/Building/GloomyFurniture/GL_ClassyDoubleBed</texPath>
+          </value>
+        </li>
+        <!--Beddings Settings-->
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="Bed"]/comps/li/blanketDef</xpath>
+          <value>
+            <blanketDef>RGK_SingleBlanket</blanketDef>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="DoubleBed"]/comps/li/blanketDef</xpath>
+          <value>
+            <blanketDef>RGK_DoubleBlanket</blanketDef>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="RoyalBed"]/comps/li/blanketDef</xpath>
+          <value>
+            <blanketDef>GL_ClassyDoubleBlanket</blanketDef>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>

@@ -1,11 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-  <BedStuffEffectMultiplierInsulation_Cold.label>effet multiplicateur du matériau isolant pour le froid.</BedStuffEffectMultiplierInsulation_Cold.label>
-  <BedStuffEffectMultiplierInsulation_Heat.label>effet multiplicateur du matériau isolant pour la chaleur.</BedStuffEffectMultiplierInsulation_Heat.label>
-  <Bed_Insulation_Cold.label>Isolation - Froid</Bed_Insulation_Cold.label>
-  <Bed_Insulation_Cold.description>Amélioration de la température minimale de confort de l'occupant de ce lit. Des valeurs plus élevées vous permettent de survivre à des températures plus froides.</Bed_Insulation_Cold.description>
-  <Bed_Insulation_Heat.label>Isolation - Chaud</Bed_Insulation_Heat.label>
-  <Bed_Insulation_Heat.description>Amélioration de la température confortable maximale de l'occupant de ce lit. Des valeurs plus élevées vous permettent de survivre à des températures plus chaudes.</Bed_Insulation_Heat.description>
-  <Textile_Softness.label>Douceur</Textile_Softness.label>
-  <Textile_Softness.description>Détermine le niveau de confort d'un objet fait de ce matériau. Lorsqu'il est utilisé pour les draps, il affecte le niveau de repos offert par le lit.</Textile_Softness.description>
 </LanguageData>

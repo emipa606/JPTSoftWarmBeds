@@ -13,25 +13,24 @@ public class CompMakeableBed : CompFlickable, IStoreSettingsParent
 
     private readonly FieldInfo baseWantSwitchInfo = AccessTools.Field(typeof(CompFlickable), "wantSwitchOn");
     private readonly Color blanketDefaultColor = new(1f, 1f, 1f);
+    public bool NotTheBlanket = true;
     public ThingDef allowedBedding;
     public Thing blanket;
     public ThingDef blanketDef;
     public ThingDef blanketStuff;
-    private float curRotationInt;
     public bool loaded;
     private ThingDef loadedBedding;
-    public bool NotTheBlanket = true;
     public StorageSettings settings;
 
     private bool SwitchOnInt
     {
-        get => (bool)baseSwitchOnIntInfo.GetValue(this);
+        get => (bool)(baseSwitchOnIntInfo.GetValue(this) ?? false);
         set => baseSwitchOnIntInfo.SetValue(this, value);
     }
 
     private bool WantSwitchOn
     {
-        get => (bool)baseWantSwitchInfo.GetValue(this);
+        get => (bool)(baseWantSwitchInfo.GetValue(this) ?? false);
         set => baseWantSwitchInfo.SetValue(this, value);
     }
 
@@ -45,18 +44,18 @@ public class CompMakeableBed : CompFlickable, IStoreSettingsParent
 
     private float CurRotation
     {
-        get => curRotationInt;
+        get;
         set
         {
-            curRotationInt = value;
-            if (curRotationInt > 360f)
+            field = value;
+            if (field > 360f)
             {
-                curRotationInt -= 360f;
+                field -= 360f;
             }
 
-            if (curRotationInt < 0f)
+            if (field < 0f)
             {
-                curRotationInt += 360f;
+                field += 360f;
             }
         }
     }
@@ -71,7 +70,7 @@ public class CompMakeableBed : CompFlickable, IStoreSettingsParent
 
     public StorageSettings GetParentStoreSettings()
     {
-        return parent.def.building.fixedStorageSettings; //defaultStorageSettings;
+        return parent.def.building.fixedStorageSettings;
     }
 
     public StorageSettings GetStoreSettings()
@@ -221,7 +220,7 @@ public class CompMakeableBed : CompFlickable, IStoreSettingsParent
         }
     }
 
-    public override void PostSplitOff(Thing bedding)
+    public override void PostSplitOff(Thing piece)
     {
         if (blanketDef == null || blanket == null)
         {

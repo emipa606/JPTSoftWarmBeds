@@ -50,7 +50,6 @@ public static class BedMakingWorkGiverUtility
 
     private static Thing findBestBedding(Pawn pawn, Building_Bed bed)
     {
-        //Log.Message(pawn + " is looking for a bedding type " + bed.TryGetComp<CompMakeableBed>().blanketDef + " for " + bed);
         var beddingFilter = new ThingFilter();
         beddingFilter.SetAllow(bed.TryGetComp<CompMakeableBed>().allowedBedding, true);
         var stuffFilter = bed.TryGetComp<CompMakeableBed>().settings.filter;

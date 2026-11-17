@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <WorkGiverDef>
+    <defName>MakeBeds</defName>
+    <label>make beds</label>
+    <giverClass>SoftWarmBeds.WorkGiver_MakeBeds</giverClass>
+    <workType>Hauling</workType>
+    <verb>make</verb>
+    <gerund>making</gerund>
+    <priorityInType>60</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <prioritizeSustains>true</prioritizeSustains>
+  </WorkGiverDef>
+</Defs>

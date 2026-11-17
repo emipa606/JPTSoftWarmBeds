@@ -6,7 +6,7 @@ namespace SoftWarmBeds;
 
 //Command to update the blanket color when needed
 [HarmonyPatch(typeof(Thing), nameof(Thing.Notify_ColorChanged))]
-public class Thing_Notify_ColorChanged
+public static class Thing_Notify_ColorChanged
 {
     public static void Postfix(object __instance)
     {

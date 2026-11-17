@@ -7,7 +7,7 @@ namespace SoftWarmBeds;
 
 //Adjusts the info report on comfortable temperatures - final value
 [HarmonyPatch(typeof(StatsReportUtility), "StatsToDraw", typeof(Thing))]
-public class StatsReportUtility_StatsToDraw
+public static class StatsReportUtility_StatsToDraw
 {
     public static IEnumerable<StatDrawEntry> Postfix(IEnumerable<StatDrawEntry> original, Thing thing)
     {
@@ -33,7 +33,7 @@ public class StatsReportUtility_StatsToDraw
                 var bedStatValue = pawn.CurrentBed().GetStatValue(modifier);
                 var bedOffset = subtract ? bedStatValue * -1 : bedStatValue;
                 statValue += bedOffset;
-                //
+
                 if (statDef.showOnDefaultValue || statValue != statDef.defaultBaseValue)
                 {
                     yield return new StatDrawEntry(statDef.category, statDef, statValue, StatRequest.For(thing));

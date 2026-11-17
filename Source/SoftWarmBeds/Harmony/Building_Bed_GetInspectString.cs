@@ -7,7 +7,7 @@ namespace SoftWarmBeds;
 
 //Adds info on used bedding material to the inspector pane
 [HarmonyPatch(typeof(Building_Bed), nameof(Building_Bed.GetInspectString))]
-public class Building_Bed_GetInspectString
+public static class Building_Bed_GetInspectString
 {
     public static void Postfix(object __instance, ref string __result)
     {

@@ -11,6 +11,7 @@
     <li>1.4</li>
     <li>1.5</li>
     <li>1.6</li>
+    <li>1.7</li>
   </supportedVersions>
   <modDependencies>
     <li>
@@ -37,24 +38,25 @@
     <li>sig.mantodeanrace</li>
     <li>Nekoemi.LoftBed</li>
   </loadAfter>
-  <description>[img]https://i.imgur.com/buuPQel.png[/img]
+  <description>[img]https://img.litet.net/logos/Info.png[/img]
 Update of jptrrss mod https://steamcommunity.com/sharedfiles/filedetails/?id=1713295858
 
 - Removed HugsLib dependency
 - cyanobot made a [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3211326812]mod[/url] to enable patching of the softness
+- Added support for [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3531523881]Loft Beds[/url] thanks to PathogenXD
 
-[img]https://i.imgur.com/pufA0kM.png[/img]
+[img]https://img.litet.net/logos/Notice.png[/img]
 
 [table]
-    [tr][td][url=https://discord.gg/h5TY6DA][img]https://i.imgur.com/zdzzBrc.png[/img][/url][/td] [td][url=https://github.com/emipa606/JPTSoftWarmBeds][img]https://i.imgur.com/kTkpTOE.png[/img][/url][/td]
+    [tr][td][url=https://discord.gg/h5TY6DA][img]https://img.litet.net/logos/Discord.png[/img][/url][/td] [td][url=https://github.com/emipa606/JPTSoftWarmBeds][img]https://img.litet.net/logos/Github.png[/img][/url][/td]
     [/tr]
     [tr]
-        [td][img]https://i.imgur.com/WjDSfUn.png[/img][/td]
-        [td][img]https://i.imgur.com/Be8E2qJ.png[/img][/td]
+        [td][img]https://img.litet.net/logos/SafeToAdd.png[/img][/td]
+        [td][img]https://img.litet.net/logos/RemoveMayWork.png[/img][/td]
     [/tr]
 [/table]
 	
-[img]https://i.imgur.com/Z4GOv8H.png[/img]
+[img]https://img.litet.net/logos/OriginalDescription.png[/img]
 
 Have you ever wondered why is it that we just need stone blocks or steel to build a bed, while wool and furs pile up in the warehouse, unused? Do you get a feeling it would be way more comfortable to lay down on something soft? And what if that cozy bed could also help with the freezing cold? Well, that's what this mod is all about!
 
@@ -107,17 +109,17 @@ EN, ES, FR, IT, PT, PT-BR, RU, ZH
 This mod was clearly based on gadjung's [url=steamcommunity.com/sharedfiles/filedetails/?id=1416581883]RealBeds[/url]. Many thanks for his coolness in letting me use some of his code on the first version! Also, it wouldn't be possible without the invaluable help of Nuka Frog, Mehni, Zamu and the folks at the RimWorld Discord channel.
 Textures for Gloomy Furniture and Gloomy Vanilla compatibility were created by Drawer based on the originals by Gloomylynx, with his authorization. RIMkea and Vanilla Furniture Expanded compatibility by the great Dr. Zhivago, with textures by Oskar Potocki. VFE - Vikings compatibility by Oken and jupiterLILY. Textures for 
 
-[img]https://i.imgur.com/PwoNOj4.png[/img]
+[img]https://img.litet.net/logos/ReportingIssues.png[/img]
 [list]
 [*] See if the the error persists if you just have this mod and its requirements active.
 [*] If not, try adding your other mods until it happens again.
-[*] Post your error-log using the [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404]Log Uploader[/url] or the standalone [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404]Uploader[/url] and command Ctrl+F12
+[*] Always post your log using the [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404]Log Uploader[/url]
 [*] For best support, please use the Discord-channel for error-reporting.
 [*] Do not report errors by making a discussion-thread, I get no notification of that.
 [*] If you have the solution for a problem, please post it to the GitHub repository.
 [*] Use [url=https://github.com/RimSort/RimSort/releases/latest]RimSort[/url] to sort your mods
 [/list] 
 
-[url=https://steamcommunity.com/sharedfiles/filedetails/changelog/3006469889][img]https://img.shields.io/github/v/release/emipa606/JPTSoftWarmBeds?label=latest%20version&amp;style=plastic&amp;color=9f1111&amp;labelColor=black[/img][/url] | tags:  blankets,  softness</description>
-  <modVersion IgnoreIfNoMatchingField="True">1.6.4</modVersion>
+[url=https://steamcommunity.com/sharedfiles/filedetails/changelog/3006469889][img]https://img.shields.io/github/v/release/emipa606/JPTSoftWarmBeds?label=latest%20version&amp;style=plastic&amp;color=9f1111&amp;labelColor=black[/img][/url] | blankets, softness</description>
+  <modVersion IgnoreIfNoMatchingField="True">1.7.0</modVersion>
 </ModMetaData>
